@@ -6,6 +6,7 @@ import {
   Route,
   Redirect,
   Switch,
+  Link
 } from 'react-router-dom';
 
 // headers
@@ -19,19 +20,19 @@ import UserPage from './components/UserPage/UserPage';
 import DashboardPage from './components/DashboardPage/DashboardPage';
 
 // log pages
-import BusLogPage from './components/LogPages/BusLogPage';
-import TrainLogPage from './components/LogPages/TrainLogPage';
-import WalkLogPage from './components/LogPages/WalkLogPage';
-import BikeLogPage from './components/LogPages/BikeLogPage';
-import CarLogPage from './components/LogPages/CarLogPage';
-import LogForm from './components/LogPages/LogForm';
+// import BusLogPage from './components/LogPages/BusLogPage';
+// import TrainLogPage from './components/LogPages/TrainLogPage';
+// import WalkLogPage from './components/LogPages/WalkLogPage';
+// import BikeLogPage from './components/LogPages/BikeLogPage';
+// import CarLogPage from './components/LogPages/CarLogPage';
+// import LogForm from './components/LogPages/LogForm';
 
 // results pages
-import AllResultsPage from './components/ResultsPages/AllResultsPage';
-import DailyResultsPage from './components/ResultsPages/DailyResultsPage';
-import MonthlyResultsPage from './components/ResultsPages/MonthlyResultsPage';
-import YearlyResultsPage from './components/ResultsPages/YearlyResultsPage';
-import ModalResultsPage from './components/ResultsPages/ModalResultsPage';
+import AllResultsPage from './components/ResultsPages/AllResultsPage/AllResultsPage';
+// import DailyResultsPage from './components/ResultsPages/DailyResultsPage/DailyResultsPage';
+// import MonthlyResultsPage from './components/ResultsPages/MonthlyResultsPage/MonthlyResultsPage';
+// import YearlyResultsPage from './components/ResultsPages/YearlyResultsPage/YearlyResultsPage';
+// import ModalResultsPage from './components/ResultsPages/ModalResultsPage/ModalResultsPage';
 
 // error pages
 import Error404Page from './components/ErrorPages/Error404Page';
@@ -64,9 +65,52 @@ const App = () => (
           path="/dashboard"
           component={DashboardPage}
         />
+        {/* <Route
+          path="/bikelog"
+          component={BikeLogPage}
+        />
+        <Route
+          path="/trainlog"
+          component={TrainLogPage}
+        />
+        <Route
+          path="/buslog"
+          component={BusLogPage}
+        />
+        <Route
+          path="/walklog"
+          component={WalkLogPage}
+        />
+        <Route
+          path="/carlog"
+          component={CarLogPage}
+        />
+          <Route
+          path="/carlog"
+          component={CarLogPage}
+        /> */}
+          <Route
+          path="/allresults"
+          component={AllResultsPage}
+        />
+          {/* <Route
+          path="/dailyresults"
+          component={DailyResultsPage}
+        />
+          <Route
+          path="/monthlyresults"
+          component={MonthlyResultsPage}
+        />
+          <Route
+          path="/yearlyresults"
+          component={YearlyResultsPage}
+        />
+          <Route
+          path="/modalresults"
+          component={ModalResultsPage}
+        /> */}
         {/* OTHERWISE (no path!) */}
-        <Route render={() => <h1>404</h1>} />
-
+        {/* <Route render={() => <h1>404</h1>} /> */}
       </Switch>
     </Router>
   </div>
