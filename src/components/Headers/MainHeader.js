@@ -1,11 +1,19 @@
 import React from 'react';
 
-const Header = ({ title }) => (
-  <div className="instructions">
-    <div>
-      <h1 className="lead">{ title }</h1>
+
+const MainHeader = ({ title }) => (
+  <div className="navbar">
+    <div className="instructions">
+      <div>
+        <h1 className="lead">{ title }</h1>
+      </div>
     </div>
   </div>
+
+  
+    
+ 
+ 
 );
 
-export default Header;
+export default MainHeader;

@@ -16,7 +16,7 @@ import MainHeader from './components/Headers/MainHeader';
 import LoginPage from './components/LoginPage/LoginPage';
 import RegisterPage from './components/RegisterPage/RegisterPage';
 import UserPage from './components/UserPage/UserPage';
-import InfoPage from './components/InfoPage/InfoPage';
+import DashboardPage from './components/DashboardPage/DashboardPage';
 
 // log pages
 import BusLogPage from './components/LogPages/BusLogPage';
@@ -61,8 +61,8 @@ const App = () => (
           component={UserPage}
         />
         <Route
-          path="/info"
-          component={InfoPage}
+          path="/dashboard"
+          component={DashboardPage}
         />
         {/* OTHERWISE (no path!) */}
         <Route render={() => <h1>404</h1>} />
