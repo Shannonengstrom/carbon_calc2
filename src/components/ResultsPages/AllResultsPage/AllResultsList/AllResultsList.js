@@ -11,7 +11,7 @@ class AllResultsList extends Component {
     render() {
         return (
             <tr>
-                <td>{this.props.logList.date}</td>
+                <td>{this.props.logList.date.split('T')[0]}</td>
                 {/* <td>{this.props.logList.mode}</td> */}
                 <td>{this.props.logList.miles}</td>
                 <td>{this.props.logList.destination}</td>

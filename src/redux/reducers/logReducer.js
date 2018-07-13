@@ -9,6 +9,16 @@ const logListReducer = (state = [], action) => {
     }
 };
 
+const multiplierReducer = (state = [], action) => {
+    switch (action.type) {
+        case 'SET_MULTIPLIER':
+            return action.payload;
+        default:
+            return state;
+    }
+};
+
 export default combineReducers({
-    logListReducer
+    logListReducer, 
+    multiplierReducer
   });

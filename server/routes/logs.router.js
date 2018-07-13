@@ -2,8 +2,29 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
+// new log form inputs - POST
 
-// all results page
+router.post('/', (req, res) => {
+    const newLog = req.body; 
+    const queryText =  `INSERT INTO logs ("co2_emis_id", "destination", "date", "miles", "notes", "total_emis", "total_saved")
+                        VALUES ($1, $2, $3, $4, $5, $6, $7)`;
+    const queryValues = [
+        newLog.destination, 
+        newLog.date, 
+        newLog.miles, 
+        newLog.notes, 
+        newLog.total_emis
+    ];
+    pool.query(queryText, queryValues)
+    .then(() => { res.sendStatus(201); })
+    .catch((err) => {
+      console.log('Error completing INSERT log query', err);
+      res.sendStatus(500);
+    });
+})
+
+
+// all results page - GET
 
 router.get('/', (req, res) => {
     console.log('in router.get');
@@ -26,6 +47,7 @@ router.get('/', (req, res) => {
   //       res.sendStatus(500);
   //     });
   // });
+
   
 
 module.exports = router;

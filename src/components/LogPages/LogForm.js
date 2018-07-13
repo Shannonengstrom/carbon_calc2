@@ -5,23 +5,28 @@ const mapStateToProps = reduxState => ({
     reduxState,
 });
 
+componentDidMount = () => {
+    this.props.dispatch({ type: 'FETCH_MULTIPLIER', payload: this.state.newLog.co2_emis_id
+    });
+  }
+
 class LogForm extends Component {
     state = {
         newLog: {
             co2_emis_id: 3,
             destination: '',
             date: '',
-            miles: '',
+            miles: 0,
             notes: '',
-            total_emis: '',
-            total_saved: '', 
+            total_emis: 0,
+            total_saved: 0, 
             person_id: 5
         }
     }
 
     handleOnChange = (propName) => {
         return event => {
-        console.log('event happended')
+        console.log('event happened')
         this.setState({
             newLog:{
                 ...this.state.newLog,
@@ -31,22 +36,18 @@ class LogForm extends Component {
         };
     }
 
-    addNewLog = event => {
-        event.preventDefault();
-        this.props.dispatch({ type: 'ADD_LOG', payload: this.state.newLog })
+    handleMileChange = () => {
+        return event => {
+        console.log('event happened')
         this.setState({
-            newLog: {
-                co2_emis_id: '',
-                destination: '',
-                date: '',
-                miles: '',
-                notes: '',
-                total_emis: '',
-                total_saved: '', 
-                person_id: ''
-            }
-        });
+            newLog:{
+                ...this.state.newLog,
+                miles: event.target.value
+                } 
+            })
+        };
     }
+  
 
     render() {
         return (

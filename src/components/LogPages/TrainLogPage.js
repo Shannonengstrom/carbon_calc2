@@ -3,7 +3,7 @@ import LogForm from './LogForm';
 
 const TrainLogPage = props => (
   <div>
-    <h2>This is the train log page!</h2>
+    <h2>new log : train</h2>
     <LogForm />
   </div>
 );

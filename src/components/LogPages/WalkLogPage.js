@@ -3,7 +3,7 @@ import LogForm from './LogForm';
 
 const WalkLogPage = props => (
   <div>
-    <h2>This is the walk log page!</h2>
+    <h2>new log : walk</h2>
     <LogForm />
   </div>
 );

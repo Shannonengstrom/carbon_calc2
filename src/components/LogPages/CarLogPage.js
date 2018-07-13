@@ -3,7 +3,7 @@ import LogForm from './LogForm';
 
 const CarLogPage = props => (
   <div>
-    <h2>This is the car log page!</h2>
+    <h2>new log : car</h2>
     <LogForm />
   </div>
 );

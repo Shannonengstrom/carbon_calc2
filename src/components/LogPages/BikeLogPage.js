@@ -9,3 +9,4 @@ const BikeLogPage = props => (
 );
 
 export default BikeLogPage;
+
