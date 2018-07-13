@@ -20,6 +20,11 @@ const Nav = () => (
             Bike Log
           </Link>
         </li>
+        <li>
+          <Link to="/allresults">
+            All Results
+          </Link>
+        </li>
       </ul>
     </div>
   </div>

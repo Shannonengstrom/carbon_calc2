@@ -1,15 +1,14 @@
-// import { combineReducers } from 'redux';
-// // import { LOG_ACTIONS } from '../actions/loginActions';
+import { combineReducers } from 'redux';
 
-// const logListReducer = (state = [], action) => {
-//     switch (action.type) {
-//         case 'SET_LOGS':
-//             return action.payload;
-//         default:
-//             return state;
-//     }
-// };
+const logListReducer = (state = [], action) => {
+    switch (action.type) {
+        case 'SET_LOGS':
+            return action.payload;
+        default:
+            return state;
+    }
+};
 
-// export default combineReducers({
-//     logListReducer
-//   });
+export default combineReducers({
+    logListReducer
+  });

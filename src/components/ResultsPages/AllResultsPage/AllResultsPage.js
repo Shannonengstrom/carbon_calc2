@@ -1,39 +1,39 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AllResultsList from './AllResultsList/AllResultsList'
+import axios from 'axios';
+
 
 const mapStateToProps = reduxState => ({
     reduxState,
 });
 
 class AllResultsPage extends Component {
-    componentDidMount() {
+    componentDidMount = () => {
         // use component did mount to dispatch an action to request the AllResultsList from the API
-        this.props.dispatch({type: 'GET_LOGS'});
+        this.props.dispatch({type: 'GET_LOGS'
+        });
     }
     
     render() {
         return (
             <div>
-                <pre>{JSON.stringify(this.props.reduxState)}</pre>
+                <pre>{JSON.stringify(this.props.reduxState.logs)}</pre>
                 <h3>your results : all</h3>
                 <table>
-                    <thead>
-                        <tr>
-                            <th>date</th>
-                            {/* <th>mode</th> */}
-                            <th>destination</th>
-                            <th># of miles</th>
-                            <th>notes</th> 
-                            {/* <th>total CO2e</th>
-                            <th>total CO2e saved</th> */}
-                        </tr>
-                    </thead>
+                    <tr>
+                        <th>date</th>
+                        {/* <th>mode</th> */}
+                        <th>destination</th>
+                        <th># of miles</th>
+                        <th>notes</th> 
+                        {/* <th>total CO2e</th>
+                        <th>total CO2e saved</th> */}
+                    </tr>
                     <tbody>
-                        <tr>{this.props.reduxState.AllResultsPage.map(log => {
+                        {this.props.reduxState.logs.logListReducer.map(log => {
                             return <AllResultsList logList={log} />
                             })}
-                        </tr>
                     </tbody>
                     <tfooter>
                         {/* totals */}
