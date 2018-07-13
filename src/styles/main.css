@@ -1,39 +1,138 @@
 
+/* Global */
+    body {
+        font-family: 'Montserrat', sans-serif;
+    }
 
-/* ------ */
+/* Nav */
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-}
+    .navbar {
+        background-color: white;
+        color: black;
+        width: 100%;
+        border-radius: 0px;
+    }
 
-.instructions h1 {
-    font-size: 24px;
-    font-weight: 700;
-}
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
 
-.instructions {
-    background-color: #00acb0;
-    padding: 5px;
-    color: #ece7e7;
-}
+    li {
+        float: left;
+    }
 
-form {
-    background-color: #dbd5d5;
-    width: 30%;
-    height: 250px;
-    margin: 20px auto;
-    padding: 25px;
-    border-radius: 2px;
-}
+    li a {
+        display: block;
+        color: black;    
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
 
-input {
-    margin: 5px;
-    margin-bottom: 10px;
-}
+    }
 
-input[type="submit"] {
-    margin: 10px;
-}
+    /* Change the link color to #111 (black) on hover */
+    li a:hover {
+        text-decoration: underline;
+        color: #111;
+    }
+
+/* Log Form */
+
+    form {
+        width: 30%;
+        height: 250px;
+        margin: 20px auto;
+        padding: 45px;
+        border-radius: 2px;
+    }
+
+    input {
+        margin: 5px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    input[type="submit"] {
+        margin: 10px;
+    }
+
+
+
+/* Header */
+
+    /* .instructions h1 {
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    .instructions {
+        background-color: #00acb0;
+        padding: 5px;
+        color: #ece7e7;
+    } */
+
+
+    .header {
+        background-color: white;
+        padding: 5px;
+        color: black;
+        width: 100%;
+        border-radius: 0px;
+    }
+
+    .header-title {
+        font-size: 24px;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    /* .header-left {
+        font-size: 24px;
+        font-weight: 700;
+        float: left;
+        text-align: left;
+    } */
+
+    /* .header-right {
+        font-size: 24px;
+        font-weight: 700;
+        float: left;
+        text-align: left;
+    } */
+
+
+
+/* Login/Registration */
+
+/* HomePage */
+
+/* LandingPage */
+
+/* Logs */
+
+/* Dashboard */
+
+/* ResultsPages */
+    /* 
+    table {
+
+    } */
+
+    table th, td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    table tr:hover {
+        background-color: #f5f5f5;
+    }
+
+/* ErrorPages */
+
 
 .message {
     padding: 10px 0;
@@ -51,34 +150,4 @@ input[type="submit"] {
     background-color: #f8f8f8;
 }
 
-.navbar {
-  background-color: #00acb0;
-  width: 100%;
-  border-radius: 0px;
-}
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-
-}
-
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-    text-decoration: underline;
-    color: #eee;
-}

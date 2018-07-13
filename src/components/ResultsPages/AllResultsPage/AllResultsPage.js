@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import AllResultsList from './AllResultsList/AllResultsList'
 import axios from 'axios';
 
+import Nav from '../../../components/Nav/Nav';
+
+
 
 const mapStateToProps = reduxState => ({
     reduxState,
@@ -17,8 +20,12 @@ class AllResultsPage extends Component {
     
     render() {
         return (
+            
             <div>
                 <pre>{JSON.stringify(this.props.reduxState.logs)}</pre>
+                <div>
+                    <Nav />
+                </div>
                 <h3>your results : all</h3>
                 <table>
                     <tr>

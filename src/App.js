@@ -45,7 +45,7 @@ import './styles/main.css';
 
 const App = () => (
   <div>
-    <MainHeader title="Project Base" />
+    <MainHeader title="CarbonCalc" />
     <Router>
       <Switch>
         <Redirect exact from="/" to="/home" />
