@@ -15,6 +15,11 @@ const Nav = () => (
             User Home
           </Link>
         </li>
+        <li>
+          <Link to="/bikelog">
+            Bike Log
+          </Link>
+        </li>
       </ul>
     </div>
   </div>

@@ -3,8 +3,6 @@ import userSaga from './userSaga';
 import loginSaga from './loginSaga';
 import logsSaga from './logsSaga';
 
-
-
 export default function* rootSaga() {
   yield all([
     userSaga(),

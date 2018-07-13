@@ -15,6 +15,11 @@ import createSagaMiddleware from 'redux-saga';
 
 // Initializing to an empty object, but here is where you could
 // preload your redux state with initial values (from localStorage, perhaps)
+
+// const startingLogArray = [
+//   { id: 1, destination: 'work'}
+// ];
+
 const preloadedState = {};
 const middlewares = [];
 const sagaMiddleware = createSagaMiddleware();

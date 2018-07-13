@@ -51,14 +51,13 @@ class LogForm extends Component {
     render() {
         return (
             <div>
-                <h3>New Log!</h3>
                 <pre>{JSON.stringify(this.state)}</pre>
                 <form onSubmit={this.addNewLog}>
                     <input type='text' value={this.state.newLog.destination} onChange={this.handleOnChange('destination')} placeholder="destination"/>
                     <input type='date' value={this.state.newLog.date} onChange={this.handleOnChange('date')} placeholder="date"/>
                     <input type='number' min="0" step="any" value={this.state.newLog.miles} onChange={this.handleOnChange('miles')} placeholder="miles"/>
                     <input type='text' value={this.state.newLog.notes} onChange={this.handleOnChange('notes')} placeholder="notes"/>
-                    <input type='submit' value='Add New Plant' />
+                    <input type='submit' value='Add' />
                 </form>
             </div>
         );

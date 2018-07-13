@@ -20,10 +20,10 @@ import UserPage from './components/UserPage/UserPage';
 import DashboardPage from './components/DashboardPage/DashboardPage';
 
 // log pages
+import BikeLogPage from './components/LogPages/BikeLogPage';
 // import BusLogPage from './components/LogPages/BusLogPage';
 // import TrainLogPage from './components/LogPages/TrainLogPage';
 // import WalkLogPage from './components/LogPages/WalkLogPage';
-// import BikeLogPage from './components/LogPages/BikeLogPage';
 // import CarLogPage from './components/LogPages/CarLogPage';
 // import LogForm from './components/LogPages/LogForm';
 
@@ -65,11 +65,11 @@ const App = () => (
           path="/dashboard"
           component={DashboardPage}
         />
-        {/* <Route
+        <Route
           path="/bikelog"
           component={BikeLogPage}
         />
-        <Route
+        {/* <Route
           path="/trainlog"
           component={TrainLogPage}
         />

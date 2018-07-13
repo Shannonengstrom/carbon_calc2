@@ -70,10 +70,10 @@ class RegisterPage extends Component {
       <div>
         {this.renderAlert()}
         <form onSubmit={this.registerUser}>
-          <h1>Register User</h1>
+          <h1>REGISTER</h1>
           <div>
             <label htmlFor="username">
-              Username:
+              USERNAME
               <input
                 type="text"
                 name="username"
@@ -84,7 +84,7 @@ class RegisterPage extends Component {
           </div>
           <div>
             <label htmlFor="password">
-              Password:
+              PASSWORD
               <input
                 type="password"
                 name="password"
@@ -99,7 +99,7 @@ class RegisterPage extends Component {
               name="submit"
               value="Register"
             />
-            <Link to="/home">Cancel</Link>
+            <Link to="/home">cancel</Link>
           </div>
         </form>
       </div>
