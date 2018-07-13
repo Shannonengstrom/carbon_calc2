@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import qs from 'query-string';
 
 
 class AllResultsList extends Component {

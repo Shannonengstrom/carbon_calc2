@@ -29,10 +29,10 @@ import BikeLogPage from './components/LogPages/BikeLogPage';
 
 // results pages
 import AllResultsPage from './components/ResultsPages/AllResultsPage/AllResultsPage';
-// import DailyResultsPage from './components/ResultsPages/DailyResultsPage/DailyResultsPage';
-// import MonthlyResultsPage from './components/ResultsPages/MonthlyResultsPage/MonthlyResultsPage';
-// import YearlyResultsPage from './components/ResultsPages/YearlyResultsPage/YearlyResultsPage';
-// import ModalResultsPage from './components/ResultsPages/ModalResultsPage/ModalResultsPage';
+import DailyResultsPage from './components/ResultsPages/DailyResultsPage/DailyResultsPage';
+import MonthlyResultsPage from './components/ResultsPages/MonthlyResultsPage/MonthlyResultsPage';
+import YearlyResultsPage from './components/ResultsPages/YearlyResultsPage/YearlyResultsPage';
+import ModalResultsPage from './components/ResultsPages/ModalResultsPage/ModalResultsPage';
 
 // error pages
 import Error404Page from './components/ErrorPages/Error404Page';
@@ -93,7 +93,7 @@ const App = () => (
           path="/allresults"
           component={AllResultsPage}
         />
-          {/* <Route
+          <Route
           path="/dailyresults"
           component={DailyResultsPage}
         />
@@ -108,9 +108,9 @@ const App = () => (
           <Route
           path="/modalresults"
           component={ModalResultsPage}
-        /> */}
+        />
         {/* OTHERWISE (no path!) */}
-        {/* <Route render={() => <h1>404</h1>} /> */}
+        <Route render={() => <h1>404</h1>} />
       </Switch>
     </Router>
   </div>
