@@ -4,25 +4,6 @@
         font-family: 'Montserrat', sans-serif;
     }
 
-    /* .main-head {
-        grid-area: header;
-    }
-    .content {
-    grid-area: content;
-    }
-    .main-nav {
-    grid-area: nav;
-    }
-    
-    .wrapper {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-areas: 
-        "header"
-        "nav"
-        "content";
-    } */
-
 /* Nav */
 
     .navbar {
@@ -39,6 +20,11 @@
     .nav-right {
         color: black;
         float: right;
+        font-size: 8px;
+    }
+
+    .navbar button {
+
     }
 
 
@@ -150,16 +136,21 @@
 
     .tile-cell{ 
         display: inline-block;
-        padding: 1em;
-        text-align: left;
+        text-align: right;
         vertical-align: top;
-        font-size: 16px;  
+        font-size: 16px; 
+      
+    }
+
+    .tile-cell :hover {
+        text-decoration: underline;
+        color: #111;
     }
 
     .tile-car{ 
         background: #98ce00ff;
         width: 100%;
-        padding-bottom: 100%;
+        padding-bottom: 100%;      
     }
     .tile-walk{ 
         background: #78c3fbff;
@@ -185,6 +176,31 @@
 
 
 /* Logs */
+
+    .carLogPage {
+        background-color: #98ce00ff;
+        color: black;
+    }
+
+    .walkLogPage {
+        background-color: #78c3fbff;
+        color: black;
+    }
+
+    .trainLogPage {
+        background-color: #a0ecd0ff;
+        color: black;
+    }
+
+    .busLogPage {
+        background-color: #ff4e00ff;
+        color: black;
+    }
+
+    .bikeLogPage {
+        background-color: #f5bb00ff;
+        color: black;
+    }
 
 /* Dashboard */
 

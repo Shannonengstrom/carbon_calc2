@@ -22,7 +22,7 @@ class AllResultsPage extends Component {
         return (
             
             <div>
-                {/* <pre>{JSON.stringify(this.props.reduxState.logs)}</pre> */}
+                <pre>{JSON.stringify(this.props.reduxState.logs)}</pre>
                 <div>
                     <Nav />
                 </div>

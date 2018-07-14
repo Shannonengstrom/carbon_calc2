@@ -53,12 +53,42 @@ class LogForm extends Component {
         return (
             <div>
                 <pre>{JSON.stringify(this.state)}</pre>
-                <form onSubmit={this.addNewLog}>
-                    <input type='text' value={this.state.newLog.destination} onChange={this.handleOnChange('destination')} placeholder="destination"/>
-                    <input type='date' value={this.state.newLog.date} onChange={this.handleOnChange('date')} placeholder="date"/>
-                    <input type='number' min="0" step="any" value={this.state.newLog.miles} onChange={this.handleOnChange('miles')} placeholder="miles"/>
-                    <input type='text' value={this.state.newLog.notes} onChange={this.handleOnChange('notes')} placeholder="notes"/>
-                    <input type='submit' value='Add' />
+                <form onSubmit={this.addNewLog}>    
+                    <label for="destination">destination
+                    <input 
+                            type='text' 
+                            value={this.state.newLog.destination} 
+                            onChange={this.handleOnChange('destination')} 
+                            id="destination"/>
+                    </label>
+                    <br />
+                    <label for="date">date
+                    <input 
+                            type='date' 
+                            value={this.state.newLog.date} 
+                            onChange={this.handleOnChange('date')} 
+                            id="date"/>
+                    </label>
+                    <br />
+                    <label for="miles">miles
+                    <input 
+                            type='number' 
+                            min="0" 
+                            step="any" 
+                            value={this.state.newLog.miles} 
+                            onChange={this.handleOnChange('miles')} 
+                            id="miles"/>
+                    </label>
+                    <br />
+                    <label for="notes">notes
+                    <input 
+                            type='text' 
+                            value={this.state.newLog.notes} 
+                            onChange={this.handleOnChange('notes')} 
+                            id="notes"/>
+                    </label>
+                    <br />
+                    <input type='submit' value='ADD' />
                 </form>
             </div>
         );
