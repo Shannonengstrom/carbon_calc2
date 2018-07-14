@@ -21,11 +21,11 @@ class AllResultsPage extends Component {
     render() {
         return (
             
-            <div>
-                <pre>{JSON.stringify(this.props.reduxState.logs)}</pre>
+            <div className="allResultsPage">
                 <div>
                     <Nav />
                 </div>
+                <pre>{JSON.stringify(this.props.reduxState.logs)}</pre>
                 <h3>your results : all</h3>
                 <table>
                     <tr>
@@ -46,6 +46,9 @@ class AllResultsPage extends Component {
                         {/* totals */}
                     </tfooter>
                 </table> 
+                <br />
+                <br /> 
+                <br />
             </div>
 
 

@@ -205,6 +205,12 @@
 /* Dashboard */
 
 /* ResultsPages */
+
+    .allResultsPage {
+        background-color: black;
+        color: white;
+    }
+
     /* 
     table {
 
