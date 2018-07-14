@@ -54,38 +54,34 @@ class LogForm extends Component {
             <div>
                 <pre>{JSON.stringify(this.state)}</pre>
                 <form onSubmit={this.addNewLog}>    
-                    <label for="destination">destination
+                    <label>destination
                     <input 
                             type='text' 
                             value={this.state.newLog.destination} 
-                            onChange={this.handleOnChange('destination')} 
-                            id="destination"/>
+                            onChange={this.handleOnChange('destination')} />
                     </label>
                     <br />
-                    <label for="date">date
+                    <label>date
                     <input 
                             type='date' 
                             value={this.state.newLog.date} 
-                            onChange={this.handleOnChange('date')} 
-                            id="date"/>
+                            onChange={this.handleOnChange('date')} />
                     </label>
                     <br />
-                    <label for="miles">miles
+                    <label>miles
                     <input 
                             type='number' 
                             min="0" 
                             step="any" 
                             value={this.state.newLog.miles} 
-                            onChange={this.handleOnChange('miles')} 
-                            id="miles"/>
+                            onChange={this.handleOnChange('miles')} />
                     </label>
                     <br />
-                    <label for="notes">notes
+                    <label>notes
                     <input 
                             type='text' 
                             value={this.state.newLog.notes} 
-                            onChange={this.handleOnChange('notes')} 
-                            id="notes"/>
+                            onChange={this.handleOnChange('notes')} />
                     </label>
                     <br />
                     <input type='submit' value='ADD' />
