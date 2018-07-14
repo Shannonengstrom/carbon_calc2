@@ -4,6 +4,8 @@
         font-family: 'Montserrat', sans-serif;
     }
 
+    
+/* ------------------------------------------- */
 /* Nav */
 
     .navbar {
@@ -54,7 +56,8 @@
         color: #111;
     }
 
-   
+
+/* ------------------------------------------- */  
 /* Log Form */
 
     form {
@@ -76,6 +79,7 @@
     }
 
 
+/* ------------------------------------------- */
 /* Header */
 
     /* .instructions h1 {
@@ -119,9 +123,13 @@
     } */
 
 
-
+/* ------------------------------------------- */
 /* Login/Registration */
 
+
+
+
+/* ------------------------------------------- */
 /* UserPage */
 
     .tile-container {
@@ -174,7 +182,7 @@
     }
 
 
-
+/* ------------------------------------------- */
 /* Logs */
 
     .carLogPage {
@@ -201,9 +209,12 @@
         background-color: #f5bb00ff;
         color: black;
     }
-
+/* ------------------------------------------- */
 /* Dashboard */
 
+
+
+/* ------------------------------------------- */
 /* ResultsPages */
 
     .resultPage {
@@ -225,7 +236,7 @@
     table tr:hover {
         background-color: #f5f5f5;
     }
-
+/* ------------------------------------------- */
 /* ErrorPages */
 
     .errorPage {
@@ -234,20 +245,22 @@
     }
 
 
-.message {
-    padding: 10px 0;
-}
+/* ------------------------------------------- */
+/* other */
+    .message {
+        padding: 10px 0;
+    }
 
-.message p {
-    margin-left: 10px;
-}
+    .message p {
+        margin-left: 10px;
+    }
 
-.message:nth-child(odd) {
-     background-color: #eeeeee;
-}
+    .message:nth-child(odd) {
+        background-color: #eeeeee;
+    }
 
-.message:nth-child(even) {
-    background-color: #f8f8f8;
-}
+    .message:nth-child(even) {
+        background-color: #f8f8f8;
+    }
 
 
