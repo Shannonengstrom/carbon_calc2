@@ -21,7 +21,7 @@ class AllResultsPage extends Component {
     render() {
         return (
             
-            <div className="allResultsPage">
+            <div className="resultsPage">
                 <div>
                     <Nav />
                 </div>
