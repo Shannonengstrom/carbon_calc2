@@ -228,6 +228,11 @@
 
 /* ErrorPages */
 
+    .errorPage {
+        background-color: black;
+        color: white;
+    }
+
 
 .message {
     padding: 10px 0;
