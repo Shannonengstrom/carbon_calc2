@@ -21,11 +21,11 @@ import DashboardPage from './components/DashboardPage/DashboardPage';
 
 // log pages
 import BikeLogPage from './components/LogPages/BikeLogPage';
-// import BusLogPage from './components/LogPages/BusLogPage';
-// import TrainLogPage from './components/LogPages/TrainLogPage';
-// import WalkLogPage from './components/LogPages/WalkLogPage';
-// import CarLogPage from './components/LogPages/CarLogPage';
-// import LogForm from './components/LogPages/LogForm';
+import BusLogPage from './components/LogPages/BusLogPage';
+import TrainLogPage from './components/LogPages/TrainLogPage';
+import WalkLogPage from './components/LogPages/WalkLogPage';
+import CarLogPage from './components/LogPages/CarLogPage';
+import LogForm from './components/LogPages/LogForm';
 
 // results pages
 import AllResultsPage from './components/ResultsPages/AllResultsPage/AllResultsPage';
@@ -69,7 +69,7 @@ const App = () => (
           path="/bikelog"
           component={BikeLogPage}
         />
-        {/* <Route
+        <Route
           path="/trainlog"
           component={TrainLogPage}
         />
@@ -88,7 +88,7 @@ const App = () => (
           <Route
           path="/carlog"
           component={CarLogPage}
-        /> */}
+        />
           <Route
           path="/allresults"
           component={AllResultsPage}
