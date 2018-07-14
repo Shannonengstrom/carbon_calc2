@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 
 import Nav from '../../components/Nav/Nav';
 
@@ -48,11 +50,47 @@ class UserPage extends Component {
     }
 
     return (
-      <div>
+      <div>   
         <Nav />
         { content }
+        <div className="tile-container">
+          <div className="tile-cell">
+            <div className="tile-car">
+              <Link to="/carlog">
+                  + car
+              </Link>
+            </div>
+          </div>
+          <div className="tile-cell">
+            <div className="tile-walk">
+              <Link to="/walklog">
+                  + walk
+              </Link>
+            </div>
+          </div>
+          <div className="tile-cell">
+            <div className="tile-train">
+              <Link to="/trainlog">
+                  + train
+              </Link>
+            </div>
+          </div>
+          <div className="tile-cell">
+            <div className="tile-bus">
+              <Link to="/buslog">
+                  + bus
+              </Link>
+            </div>
+          </div>
+          <div className="tile-cell">
+            <div className="tile-bike">
+              <Link to="/bikelog">
+                  + bike
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
-      // cards
     );
   }
 }

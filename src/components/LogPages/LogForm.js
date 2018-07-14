@@ -5,10 +5,10 @@ const mapStateToProps = reduxState => ({
     reduxState,
 });
 
-componentDidMount = () => {
-    this.props.dispatch({ type: 'FETCH_MULTIPLIER', payload: this.state.newLog.co2_emis_id
-    });
-  }
+// componentDidMount = () => {
+//     this.props.dispatch({ type: 'FETCH_MULTIPLIER', payload: this.state.newLog.co2_emis_id
+//     });
+//   }
 
 class LogForm extends Component {
     state = {
