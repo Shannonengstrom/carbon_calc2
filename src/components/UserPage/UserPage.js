@@ -24,35 +24,35 @@ class UserPage extends Component {
     }
   }
 
-  logout = () => {
-    this.props.dispatch(triggerLogout());
-    // this.props.history.push('home');
-  }
+  // logout = () => {
+  //   this.props.dispatch(triggerLogout());
+  //   // this.props.history.push('home');
+  // }
 
   render() {
-    let content = null;
+    // let content = null;
 
-    if (this.props.user.userName) {
-      content = (
-        <div>
-          <h1
-            id="welcome"
-          >
-            Welcome, { this.props.user.userName }!
-          </h1>
-          <button
-            onClick={this.logout}
-          >
-            Log Out
-          </button>
-        </div>
-      );
-    }
+    // if (this.props.user.userName) {
+    //   content = (
+    //     <div>
+    //       <h1
+    //         id="welcome"
+    //       >
+    //         Welcome, { this.props.user.userName }!
+    //       </h1>
+    //       <button
+    //         onClick={this.logout}
+    //       >
+    //         Log Out
+    //       </button>
+    //     </div>
+    //   );
+    // }
 
     return (
-      <div>   
+      <div>
         <Nav />
-        { content }
+        {/* { content } */}
         <div className="tile-container">
           <div className="tile-cell">
             <div className="tile-car">
