@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Nav from '../../components/Nav/Nav';
 import DashboardLinks from './DashboardLinks/DashboardLinks';
-// import DashboardChart from './DashboardChart/DashboardChart';
-
-
+import DashboardChart from './DashboardChart/DashboardChart';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 
 
@@ -41,8 +39,10 @@ class DashboardPage extends Component {
         <Nav />
         { content }
         <DashboardLinks />
-        Dashboard Chart here
-        {/* <DashboardChart /> */}
+        <DashboardChart />
+        {/* <canvas id="myChart" width="400" height="400"></canvas>
+        const ctx = document.getElementById("myChart").getContext("2d"); */}
+
       </div>
     );
   }
