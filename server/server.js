@@ -29,7 +29,7 @@ app.use(passport.session());
 /* Routes */
 app.use('/api/user', userRouter);
 app.use('/api/logs', logsRouter);
-app.use('/api/multiplier', multiplierRouter);
+// app.use('/api/multiplier', multiplierRouter);
 
 
 

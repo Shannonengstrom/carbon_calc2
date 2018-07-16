@@ -1,70 +1,71 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
 
 const mapStateToProps = reduxState => ({
     reduxState,
 });
 
-// componentDidMount = () => {
-//     this.props.dispatch({ type: 'FETCH_MULTIPLIER', payload: this.state.newLog.co2_emis_id
-//     });
-//   }
-
 class LogForm extends Component {
-    state = {
-        newLog: {
-            co2_emis_id: 3,
-            destination: '',
-            date: '',
-            miles: 0,
-            notes: '',
-            total_emis: 0,
-            total_saved: 0, 
-            person_id: 5
+    constructor(props) {
+        super(props);
+        this.state = {
+                destination: '',
+                date: '',
+                miles: 0,
+                notes: '',
+                total_emis: 0,
+                total_saved: 0, 
+                person_id: 5
         }
     }
 
-    handleOnChange = (propName) => {
-        return event => {
+    handleOnChange = propName => (event) => {
         console.log('event happened')
         this.setState({
-            newLog:{
-                ...this.state.newLog,
-                [propName]: event.target.value
-                } 
-            })
-        };
+            ...this.state,    
+            [propName]: event.target.value
+            });
+        console.log('state:', this.state);
+        
+        }
+
+    handleSubmit = () => {
+        this.sendInputsToRedux();
+    }
+   
+    sendInputsToRedux = () => {
+        const body = {...this.props.co2, ...this.state};
+        const action = {type: 'ADD_INPUTS', payload: body};
+        this.props.dispatch(action);
+        console.log(body);
+        this.sendNewLogToServer();
     }
 
-    handleMileChange = () => {
-        return event => {
-        console.log('event happened')
-        this.setState({
-            newLog:{
-                ...this.state.newLog,
-                miles: event.target.value
-                } 
-            })
-        };
+    sendNewLogToServer = () => {
+        const newLog = this.state;
+        console.log('in sendNewLogToServer', newLog)
+        axios.post('/api/logs', newLog)
+        .catch((error) => {
+            console.log(error);
+            alert('Error with axios.post!')
+        });  
     }
-  
 
     render() {
         return (
             <div>
-                <pre>{JSON.stringify(this.state)}</pre>
-                <form onSubmit={this.addNewLog}>    
+            <pre>{JSON.stringify(this.state)}</pre>
+                <form onSubmit={this.handleSubmit}>    
                     <label>destination
                     <input 
                             type='text' 
-                            value={this.state.newLog.destination} 
                             onChange={this.handleOnChange('destination')} />
                     </label>
                     <br />
                     <label>date
                     <input 
                             type='date' 
-                            value={this.state.newLog.date} 
                             onChange={this.handleOnChange('date')} />
                     </label>
                     <br />
@@ -73,18 +74,16 @@ class LogForm extends Component {
                             type='number' 
                             min="0" 
                             step="any" 
-                            value={this.state.newLog.miles} 
                             onChange={this.handleOnChange('miles')} />
                     </label>
                     <br />
                     <label>notes
                     <input 
                             type='text' 
-                            value={this.state.newLog.notes} 
                             onChange={this.handleOnChange('notes')} />
                     </label>
                     <br />
-                    <input type='submit' value='ADD' />
+                    <input type='submit' value='ADD'/>
                 </form>
             </div>
         );

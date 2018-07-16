@@ -23,23 +23,23 @@ function* postLog(action) {
 
 // emission multiplier
 
-function* getMultiplier(action) {
-    try { 
-        console.log('log in get multiplier');
-        console.log(action.payload);
-        const multiplierResponse = yield call(axios.get, `/api/multiplier/${action.payload}`);
-        yield put( {type: 'SET_MULTIPLIER', 
-                    payload: multiplierResponse.data})
-    } catch (error) {
-        console.log('bad things happened', error); 
-    }
-}
+// function* getMultiplier(action) {
+//     try { 
+//         console.log('log in get multiplier');
+//         console.log(action.payload);
+//         const multiplierResponse = yield call(axios.get, `/api/multiplier/${action.payload}`);
+//         yield put( {type: 'SET_MULTIPLIER', 
+//                     payload: multiplierResponse.data})
+//     } catch (error) {
+//         console.log('bad things happened', error); 
+//     }
+// }
 
 
 function* logsSaga() {
     yield takeLatest('GET_LOGS', getLogs);
     yield takeLatest('POST_LOG', postLog);
-    yield takeLatest('FETCH_MULTIPLIER', getMultiplier);
+    // yield takeLatest('FETCH_MULTIPLIER', getMultiplier);
 
   }
 
