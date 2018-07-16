@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import MonthlyResultsList from './AllResultsList/AllResultsList'
-import axios from 'axios';
 import Nav from '../../../components/Nav/Nav';
 
 const mapStateToProps = reduxState => ({

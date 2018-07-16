@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-
-
 import { triggerLogout } from '../../redux/actions/loginActions';
 
 

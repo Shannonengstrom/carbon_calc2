@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import LogForm from './LogForm';
 import Nav from '../../components/Nav/Nav';
 

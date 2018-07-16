@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const MainHeader = ({ title }) => (
   <div className="header">
     <div className="header-title">

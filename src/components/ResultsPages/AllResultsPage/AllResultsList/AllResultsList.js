@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-
 class AllResultsList extends Component {
     
     // handleDelete = (id) => {

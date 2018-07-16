@@ -5,12 +5,10 @@ import {
   HashRouter as Router,
   Route,
   Redirect,
-  Switch,
-  Link
+  Switch
 } from 'react-router-dom';
 
 // headers
-import LoginHeader from './components/Headers/LoginHeader';
 import MainHeader from './components/Headers/MainHeader';
 
 // main pages
@@ -25,7 +23,6 @@ import BusLogPage from './components/LogPages/BusLogPage';
 import TrainLogPage from './components/LogPages/TrainLogPage';
 import WalkLogPage from './components/LogPages/WalkLogPage';
 import CarLogPage from './components/LogPages/CarLogPage';
-import LogForm from './components/LogPages/LogForm';
 
 // results pages
 import AllResultsPage from './components/ResultsPages/AllResultsPage/AllResultsPage';
@@ -35,8 +32,8 @@ import YearlyResultsPage from './components/ResultsPages/YearlyResultsPage/Yearl
 import ModalResultsPage from './components/ResultsPages/ModalResultsPage/ModalResultsPage';
 
 // error pages
-import Error404Page from './components/ErrorPages/Error404Page';
-import Forbidden403Page from './components/ErrorPages/Forbidden403Page';
+// import Error404Page from './components/ErrorPages/Error404Page';
+// import Forbidden403Page from './components/ErrorPages/Forbidden403Page';
 
 
 

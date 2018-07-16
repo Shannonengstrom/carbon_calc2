@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AllResultsList from './AllResultsList/AllResultsList'
-import axios from 'axios';
-
 import Nav from '../../../components/Nav/Nav';
 
 
@@ -21,7 +19,7 @@ class AllResultsPage extends Component {
     render() {
         return (
             
-            <div className="resultsPage">
+            <div className="resultPage">
                 <div>
                     <Nav />
                 </div>
