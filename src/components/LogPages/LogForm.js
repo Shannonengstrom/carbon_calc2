@@ -45,7 +45,7 @@ class LogForm extends Component {
     }
 
     sendNewLogToServer = () => {
-        const newLog = this.state;
+        const newLog = this.props.reduxStore.logs.logListReducer;
         console.log('in sendNewLogToServer', newLog)
         axios.post('/api/logs', newLog)
         .catch((error) => {
