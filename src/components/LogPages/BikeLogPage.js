@@ -16,14 +16,23 @@ class BikeLogPage extends Component {
     }
   }
 
+
   sendMultToRedux = () => {
     const body = this.state.co2_emis_id;
+    console.log(body);
     const action = {type: 'ADD_MULTIPLIERID', payload: body};
     this.props.dispatch(action);
     console.log(action);
   }
 
+  componentDidMount () {
+    this.sendMultToRedux();
+  } 
+
   render() {
+
+    
+
     return (
       <div className="bikeLogPage">
         <Nav />
