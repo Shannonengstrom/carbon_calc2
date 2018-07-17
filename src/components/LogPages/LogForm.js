@@ -54,7 +54,21 @@ class LogForm extends Component {
     //     console.log(co2_emis_id);
     //     this.state.newLog = {...this.state.newLog, co2_emis_id };
     // }
+    
 
+    calcEmis = () => {
+        console.log();
+        const multiplier = this.props.reduxStore.logs.logListReducer.co2_emis;
+        console.log(multiplier);
+        const miles = this.state.newInput.miles
+        console.log(miles);
+        const calcEmis = ( multiplier * miles); 
+        const body = calcEmis;
+        console.log(calcEmis);
+        const action = {type: 'ADD_EMIS', payload: body};
+        this.props.dispatch(action);
+        console.log(action);
+    };
 
     
     addNewInput = (event) => {
@@ -67,6 +81,7 @@ class LogForm extends Component {
         this.props.dispatch(action);
         console.log(action);
         this.postLog(); 
+        this.calcEmis();
      }
         
 

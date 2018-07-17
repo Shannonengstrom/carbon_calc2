@@ -12,13 +12,13 @@ class BikeLogPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        co2_emis_id: 5
+        co2_emis: 5
     }
   }
 
 
   sendMultToRedux = () => {
-    const body = this.state.co2_emis_id;
+    const body = this.state.co2_emis;
     console.log(body);
     const action = {type: 'ADD_MULTIPLIERID', payload: body};
     this.props.dispatch(action);

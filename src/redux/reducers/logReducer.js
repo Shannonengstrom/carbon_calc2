@@ -9,7 +9,7 @@ const logListReducer = (state = {}, action) => {
     if(action.type === 'ADD_MULTIPLIERID') {
         console.log(`I'm the logListReducer`, action);
         console.log('in reducer: ADD MULTIPLIERID', action.payload);
-        return state = {...state, co2_emis_id: action.payload};
+        return state = {...state, co2_emis: action.payload};
     }
     if(action.type === 'ADD_INPUTS') {
         console.log(`I'm the logListReducer`, action);
@@ -20,9 +20,9 @@ const logListReducer = (state = {}, action) => {
             notes: action.payload.notes
             };
         }
-    if(action.type === 'ADD_TOTAL_EMIS') {
+    if(action.type === 'ADD_EMIS') {
         console.log(`I'm the logListReducer`, action);
-        console.log('in reducer: ADD INPUTS', action.payload);
+        console.log('in reducer: ADD EMIS', action.payload);
         return state = {...state,
             total_emis: action.payload.total_emis
             };
