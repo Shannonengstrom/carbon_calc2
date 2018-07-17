@@ -31,8 +31,6 @@ class BikeLogPage extends Component {
 
   render() {
 
-    
-
     return (
       <div className="bikeLogPage">
         <Nav />

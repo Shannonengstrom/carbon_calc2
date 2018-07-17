@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux';
-import axios from 'axios';
 
 
 const logListReducer = (state = {}, action) => {
@@ -8,25 +7,25 @@ const logListReducer = (state = {}, action) => {
         return action.payload;
     }
     if(action.type === 'ADD_MULTIPLIERID') {
-    console.log(`I'm the logListReducer`, action);
-    console.log('in loglist', action.payload);
-    return state = {...state, co2_emis_id: action.payload};
+        console.log(`I'm the logListReducer`, action);
+        console.log('in reducer: ADD MULTIPLIERID', action.payload);
+        return state = {...state, co2_emis_id: action.payload};
     }
     if(action.type === 'ADD_INPUTS') {
         console.log(`I'm the logListReducer`, action);
-        // return {...state, destination: action.payload.destination, 
-        //     date: action.payload.date,
-        //     miles: action.payload.miles,
-        //     notes: action.payload.notes
-        //     };
-    return state = {...state,
-        // co2: action.payload.co2, 
-        destination: action.payload.destination, 
-        date: action.payload.date,
-        miles: action.payload.miles,
-        notes: action.payload.notes
-        };
-        console.log(state);
+        return state = {...state,
+            destination: action.payload.destination, 
+            date: action.payload.date,
+            miles: action.payload.miles,
+            notes: action.payload.notes
+            };
+        }
+    if(action.type === 'ADD_TOTAL_EMIS') {
+        console.log(`I'm the logListReducer`, action);
+        console.log('in reducer: ADD INPUTS', action.payload);
+        return state = {...state,
+            total_emis: action.payload.total_emis
+            };
         }
       return state;
     }
