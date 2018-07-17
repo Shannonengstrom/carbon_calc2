@@ -71,9 +71,12 @@ class LogForm extends Component {
         
 
   postLog = () => {
-    const body = this.props.reduxStore.logs.logListReducer;
-    console.log('in postLog', body);
-    this.props.dispatch({type: 'POST_LOG', payload: body})
+    const body = this.state;
+    const store = this.props.reduxStore.logs.logListReducer
+    console.log('in postLog', body, store);
+    this.props.dispatch({type: 'POST_LOG', payload: 
+            {body: body, co2_emis_id: store.co2_emis_id}
+    })
     // this.setState({
     //     newInput: {
     //         destination: '',

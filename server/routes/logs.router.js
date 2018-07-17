@@ -8,7 +8,8 @@ router.post('/', (req, res) => {
     console.log('in router.post', req.body);
     const id = req.user.id;
     // const co2_emis_id = req.body. 
-    const newLog = req.body; 
+    const newLog = req.body.body.newInput; 
+    const co2 = req.body.body;
     const queryText =  `INSERT INTO logs ("co2_emis_id", "destination", "date", "miles", "notes", "total_emis", "total_saved", "person_id")
                         VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`;
     const queryValues = [
