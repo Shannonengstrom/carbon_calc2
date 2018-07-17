@@ -5,13 +5,12 @@ import axios from 'axios';
 const logListReducer = (state = {}, action) => {
     if(action.type === 'SET_LOGS') {
         console.log(`I'm the logListReducer`, action);
-        const newLog = action.payload;
-        state = {...state, newLog};
+        return action.payload;
     }
     if(action.type === 'ADD_MULTIPLIERID') {
     console.log(`I'm the logListReducer`, action);
     console.log('in loglist', action.payload);
-    state = {...state, co2_emis_id: action.payload};
+    return state = {...state, co2_emis_id: action.payload};
     }
     if(action.type === 'ADD_INPUTS') {
         console.log(`I'm the logListReducer`, action);
@@ -20,7 +19,8 @@ const logListReducer = (state = {}, action) => {
         //     miles: action.payload.miles,
         //     notes: action.payload.notes
         //     };
-    state = {...state, co2: action.payload.co2, 
+    return state = {...state,
+        // co2: action.payload.co2, 
         destination: action.payload.destination, 
         date: action.payload.date,
         miles: action.payload.miles,

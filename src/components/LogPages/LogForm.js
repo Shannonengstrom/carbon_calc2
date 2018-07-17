@@ -38,6 +38,7 @@ class LogForm extends Component {
         const co2 = this.props.reduxStore.logs.logListReducer.co2_emis_id;
         console.log(co2);
         const body = {...this.state, co2 };
+        console.log(body);
         const action = {type: 'ADD_INPUTS', payload: body};
         this.props.dispatch(action);
         console.log(body);
@@ -47,6 +48,7 @@ class LogForm extends Component {
     sendNewLogToServer = () => {
         const newLog = this.props.reduxStore.logs.logListReducer;
         console.log('in sendNewLogToServer', newLog)
+        console.log(this.props.reduxStore);
         axios.post('/api/logs', newLog)
         .catch((error) => {
             console.log(error);
