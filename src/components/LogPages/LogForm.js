@@ -13,7 +13,7 @@ class LogForm extends Component {
             newInput: {
                 destination: '',
                 date: '',
-                miles: 0,
+                miles:'',
                 notes: '',
             }, 
             newEmis: {
@@ -49,7 +49,7 @@ class LogForm extends Component {
         const action = {type: 'ADD_EMIS', payload: body};
         this.props.dispatch(action);
         console.log(action);
-        await new Promise(resolve => {setTimeout(resolve, 1000)})
+        await new Promise(resolve => {setTimeout(resolve, 100)})
         this.postLog(); 
     };
 
@@ -68,18 +68,22 @@ class LogForm extends Component {
   postLog = () => {
     const newLog = this.props.reduxStore.logs.logListReducer;
     console.log('in postLog - this is the store:', newLog);
-    this.props.dispatch({type: 'POST_LOG', payload: newLog})    
-    // this.setState({
-    //     newInput: {
-    //         destination: '',
-    //         date: '',
-    //         miles: 0,
-    //         notes: '',
-    //     }, 
-    //     newEmis: {
-    //         total_emis: 0
-    //     }
-    // });
+    this.props.dispatch({type: 'POST_LOG', payload: newLog})
+    this.clearInputs();    
+}
+
+clearInputs() {
+    this.setState({
+        newInput: {
+            destination: '',
+            date: '',
+            miles: '',
+            notes: '',
+        }, 
+        newEmis: {
+            total_emis: 0
+        }
+    });
 }
 
     render() {
@@ -89,26 +93,29 @@ class LogForm extends Component {
                 <form onSubmit={this.addNewInput}>    
                     <label>destination
                     <input 
+                            value={this.state.newInput.destination}
                             type='text' 
                             onChange={this.handleOnChange('destination')} />
                     </label>
                     <br />
                     <label>date
                     <input 
+                            value={this.state.newInput.date}
                             type='date' 
                             onChange={this.handleOnChange('date')} />
                     </label>
                     <br />
                     <label>miles
                     <input 
+                            value={this.state.newInput.miles}
                             type='number' 
-                            min="0" 
                             step="any" 
                             onChange={this.handleOnChange('miles')} />
                     </label>
                     <br />
                     <label>notes
                     <input 
+                            value={this.state.newInput.notes}
                             type='text' 
                             onChange={this.handleOnChange('notes')} />
                     </label>

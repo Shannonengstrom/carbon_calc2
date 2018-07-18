@@ -25,14 +25,14 @@ class AllResultsPage extends Component {
                 <pre>{JSON.stringify(this.props.reduxStore.logs.logListReducer)}</pre>
                 <h3>your results : all</h3>
                 <table>
-                    <tr>
+                    <thead>
                         <th>date</th>
                         <th>mode</th>
                         <th>destination</th>
                         <th># of miles</th>
                         <th>notes</th> 
                         <th>total CO2e</th>
-                    </tr>
+                    </thead>
                     <tbody>
                         {this.props.reduxStore.logs.logListReducer.newLog.map(log => {
                             return <AllResultsList logList={log} />
@@ -53,7 +53,3 @@ class AllResultsPage extends Component {
 }
 
 export default connect(mapStoreToProps)(AllResultsPage);
-
-// notes
-// total CO2e
-// total CO2e saved

@@ -1,6 +1,5 @@
 import { combineReducers } from 'redux';
 
-
 const logListReducer = (state = {newLog:[]}, action) => {
     if(action.type === 'SET_LOGS') {
         console.log(`I'm the logListReducer`, action);
@@ -32,5 +31,4 @@ const logListReducer = (state = {newLog:[]}, action) => {
 
 export default combineReducers({
     logListReducer 
-    // multiplierReducer
   });
