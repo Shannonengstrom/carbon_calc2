@@ -5,10 +5,12 @@ const logListReducer = (state = {newLog:[]}, action) => {
         console.log(`I'm the logListReducer`, action);
         return state = {...state, newLog: action.payload};
     }
-    if(action.type === 'ADD_MULTIPLIERID') {
+    if(action.type === 'ADD_DEFAULTS') {
         console.log(`I'm the logListReducer`, action);
-        console.log('in reducer: ADD MULTIPLIERID', action.payload);
-        return state = {...state, co2_emis: action.payload};
+        console.log('in reducer: ADD DEFAULTS', action.payload);
+        return state = {...state, 
+                    mode: action.payload.mode,
+                    co2_emis: action.payload.co2_emis};
     }
     if(action.type === 'ADD_INPUTS') {
         console.log(`I'm the logListReducer`, action);

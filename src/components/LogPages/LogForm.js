@@ -32,7 +32,6 @@ class LogForm extends Component {
                     [propName]: event.target.value
                     }
                 })
-                console.log('state:', this.state);
             };
         }
 

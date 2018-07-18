@@ -12,15 +12,20 @@ class BikeLogPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        co2_emis: 5
+      defaults: {
+        mode: 'bike',
+        co2_emis: 3
+      }
+         
     }
   }
 
 
   sendMultToRedux = () => {
-    const body = this.state.co2_emis;
+    // const body = this.state.co2_emis;
+    const body = this.state.defaults;
     console.log(body);
-    const action = {type: 'ADD_MULTIPLIERID', payload: body};
+    const action = {type: 'ADD_DEFAULTS', payload: body};
     this.props.dispatch(action);
     console.log(action);
   }
@@ -37,7 +42,6 @@ class BikeLogPage extends Component {
         <h2>new log : bike</h2>
         <pre>{JSON.stringify(this.state)}</pre>
         <LogForm co2={this.state}/>
-        {/* this.props.co2 */}
       </div>
     );
   }
