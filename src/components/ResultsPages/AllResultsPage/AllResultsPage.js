@@ -34,7 +34,7 @@ class AllResultsPage extends Component {
                         <th>total CO2e</th>
                     </tr>
                     <tbody>
-                        {this.props.reduxStore.logs.logListReducer.map(log => {
+                        {this.props.reduxStore.logs.logListReducer.newLog.map(log => {
                             return <AllResultsList logList={log} />
                             })}
                     </tbody>

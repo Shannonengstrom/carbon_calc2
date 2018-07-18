@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 
 
-const logListReducer = (state = [], action) => {
+const logListReducer = (state = {newLog:[]}, action) => {
     if(action.type === 'SET_LOGS') {
         console.log(`I'm the logListReducer`, action);
-        return action.payload;
+        return state = {...state, newLog: action.payload};
     }
     if(action.type === 'ADD_MULTIPLIERID') {
         console.log(`I'm the logListReducer`, action);
