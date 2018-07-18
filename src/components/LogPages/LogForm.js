@@ -21,7 +21,7 @@ class LogForm extends Component {
             }
         }  
     }
-            
+     
 
     handleOnChange = (propName) => {
         return event => {
@@ -69,14 +69,17 @@ class LogForm extends Component {
     const newLog = this.props.reduxStore.logs.logListReducer;
     console.log('in postLog - this is the store:', newLog);
     this.props.dispatch({type: 'POST_LOG', payload: newLog})    
-    this.setState({
-        newInput: {
-            destination: '',
-            date: '',
-            miles: '',
-            notes: '',
-        }
-    });
+    // this.setState({
+    //     newInput: {
+    //         destination: '',
+    //         date: '',
+    //         miles: 0,
+    //         notes: '',
+    //     }, 
+    //     newEmis: {
+    //         total_emis: 0
+    //     }
+    // });
 }
 
     render() {

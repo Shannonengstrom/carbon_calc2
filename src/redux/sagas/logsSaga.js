@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { takeLatest, call, put } from 'redux-saga/effects';
+import { takeLatest, takeEvery, call, put } from 'redux-saga/effects';
 
 function* getLogs() {
     try { 
@@ -16,7 +16,7 @@ function* postLog(action) {
     try {
         yield call(axios.post, '/api/logs', action.payload);
         console.log(action.payload);
-        yield put( {type: 'GET_LOGS'} );
+        // yield put( {type: 'GET_LOGS'} );
     } catch (error) {
         console.log('bad things happened', error);
     }
