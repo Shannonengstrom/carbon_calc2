@@ -24,4 +24,5 @@ VALUES ('test1', 'password123'), ('test2', 'password123'), ('test3', 'password12
 INSERT INTO logs ("mode", "co2_emis", "destination", "date", "miles", "notes", "total_emis", "person_id")
 VALUES ('bike', 30, 'work', '09-15-1991', 5.3, '', 10, 1);
 
-
+SELECT SUM(total_emis)
+FROM logs;

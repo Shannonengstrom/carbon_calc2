@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AllResultsList from './AllResultsList/AllResultsList'
+import AllResultsTotal from './AllResultsTotal/AllResultsTotal'
 import Nav from '../../../components/Nav/Nav';
 
 
@@ -13,6 +14,7 @@ class AllResultsPage extends Component {
     componentDidMount = () => {
         // use component did mount to dispatch an action to request the AllResultsList from the API
         this.props.dispatch({type: 'GET_LOGS'});
+        this.props.dispatch({type: 'GET_TOTAL'});
     }
     
     render() {
@@ -23,6 +25,7 @@ class AllResultsPage extends Component {
                     <Nav />
                 </div>
                 <pre>{JSON.stringify(this.props.reduxStore.logs.logListReducer)}</pre>
+
                 <h3>your results : all</h3>
                 <table>
                     <thead>
@@ -33,14 +36,19 @@ class AllResultsPage extends Component {
                         <th>notes</th> 
                         <th>total CO2e</th>
                     </thead>
+                    <tfoot>
+                        <tr>
+                            <td>
+                                {/* <AllResultsTotal /> */}
+                                {this.props.reduxStore.logs.totalReducer.totalEmission}
+                            </td>
+                        </tr>
+                    </tfoot>
                     <tbody>
                         {this.props.reduxStore.logs.logListReducer.newLog.map(log => {
                             return <AllResultsList logList={log} />
                             })}
                     </tbody>
-                    <tfooter>
-                        {/* totals */}
-                    </tfooter>
                 </table> 
                 <br />
                 <br /> 

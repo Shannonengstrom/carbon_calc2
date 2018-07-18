@@ -5,6 +5,7 @@ const logListReducer = (state = {newLog:[]}, action) => {
         console.log(`I'm the logListReducer`, action);
         return state = {...state, newLog: action.payload};
     }
+
     if(action.type === 'ADD_DEFAULTS') {
         console.log(`I'm the logListReducer`, action);
         console.log('in reducer: ADD DEFAULTS', action.payload);
@@ -28,9 +29,19 @@ const logListReducer = (state = {newLog:[]}, action) => {
             total_emis: action.payload
             };
         }
-      return state;
+        return state;
+    }
+
+
+const totalReducer = (state = {}, action) => {
+    if(action.type === 'SET_TOTAL') {
+        console.log(`I'm the logListReducer`, action);
+        return state = {...state, totalEmission: action.payload};
+        }
+    return state;
     }
 
 export default combineReducers({
-    logListReducer 
+    logListReducer, 
+    totalReducer 
   });

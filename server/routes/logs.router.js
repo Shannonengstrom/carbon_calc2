@@ -9,8 +9,8 @@ router.post('/', (req, res) => {
     // const newEmis = req.body.body;
     // console.log('this is newEmis:', newEmis);
     const newLog = req.body;
-    const queryText =  `INSERT INTO logs ("mode", "co2_emis", "destination", "date", "miles", "notes", "total_emis", "person_id")
-                        VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`;
+    const queryText =  `INSERT INTO logs ("mode", co2_emis", "destination", "date", "miles", "notes", "total_emis", "person_id")
+                        VALUES ($1, $2, $3, $4, $5, $6, $7)`;
     const queryValues = [
         newLog.mode,
         newLog.co2_emis,
@@ -35,6 +35,18 @@ router.post('/', (req, res) => {
 router.get('/', (req, res) => {
     console.log('in router.get');
     const queryText = 'SELECT * FROM logs';
+    pool.query(queryText).then((result) => {
+        res.send(result.rows);
+    }).catch((err) => {
+        console.log('error making query', err);
+        res.sendStatus(500);
+    });
+  });
+
+  router.get('/total', (req, res) => {
+    console.log('in router.get');
+    const queryText = `SELECT SUM(total_emis)
+    FROM logs`;
     pool.query(queryText).then((result) => {
         res.send(result.rows);
     }).catch((err) => {

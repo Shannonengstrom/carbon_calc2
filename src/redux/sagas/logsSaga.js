@@ -22,9 +22,21 @@ function* postLog(action) {
     }
 }
 
+function* getEmisTotal() {
+    try { 
+        console.log('log in get log total emis');
+        const totalResponse = yield call(axios.get, '/api/logs/total');
+        yield put( {type: 'SET_TOTAL', 
+                    payload: totalResponse.data})
+    } catch (error) {
+        console.log('bad things happened', error); 
+    }
+}
+
 function* logsSaga() {
     yield takeLatest('GET_LOGS', getLogs);
     yield takeLatest('POST_LOG', postLog);
+    yield takeLatest('GET_TOTAL', getEmisTotal);
   }
 
 export default logsSaga;
