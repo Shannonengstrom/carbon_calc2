@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-const mapStateToProps = reduxStore => ({
+const mapStoreToProps = reduxStore => ({
     reduxStore,
 });
 
@@ -35,27 +35,6 @@ class LogForm extends Component {
                 console.log('state:', this.state);
             };
         }
-        
-      
-        ///now addNewLog
-    // sendInputsToRedux = () => {
-    //     const co2 = this.props.reduxStore.logs.logListReducer.co2_emis_id;
-    //     console.log(co2);
-    //     const body = {...this.state, co2 };
-    //     console.log(body);
-    //     const action = {type: 'ADD_INPUTS', payload: body};
-    //     this.props.dispatch(action);
-    //     console.log(body);
-    //     this.sendNewLogToServer();
-    // }
-
-
-    // componentDidMount() {
-    //     const co2_emis_id = this.props.reduxStore.logs.logListReducer.co2_emis_id;
-    //     console.log(co2_emis_id);
-    //     this.state.newLog = {...this.state.newLog, co2_emis_id };
-    // }
-    
 
     async calcEmis () {
         const multiplier = this.props.reduxStore.logs.logListReducer.co2_emis;
@@ -87,27 +66,18 @@ class LogForm extends Component {
         
 
   postLog = () => {
-    // const newInput = this.props.reduxStore.logs.logListReducer.co2_emis;
-    // const newEmis = this.state.newEmis;
     const newLog = this.props.reduxStore.logs.logListReducer;
-    // console.log('in postLog - this is newInput:', newInput);
-    // console.log('in postLog - this is newEmis:', newEmis);
     console.log('in postLog - this is the store:', newLog);
-    this.props.dispatch({type: 'POST_LOG', payload: newLog
-            // {newInput: newInput, newEmis: newEmis, co2_emis_id: store.co2_emis_id}
-    })    
-    // this.setState({
-    //     newInput: {
-    //         destination: '',
-    //         date: '',
-    //         miles: '',
-    //         notes: '',
-    //     }
-    // });
+    this.props.dispatch({type: 'POST_LOG', payload: newLog})    
+    this.setState({
+        newInput: {
+            destination: '',
+            date: '',
+            miles: '',
+            notes: '',
+        }
+    });
 }
-
-
-
 
     render() {
         return (
@@ -148,4 +118,4 @@ class LogForm extends Component {
 }
 
 
-export default connect(mapStateToProps)(LogForm);
+export default connect(mapStoreToProps)(LogForm);

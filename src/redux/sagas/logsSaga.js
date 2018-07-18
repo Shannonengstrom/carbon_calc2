@@ -22,19 +22,6 @@ function* postLog(action) {
     }
 }
 
-
-// sendNewLogToServer = () => {
-//     const newLog = this.props.reduxStore.logs.logListReducer;
-//     console.log('in sendNewLogToServer', newLog)
-//     console.log(this.props.reduxStore);
-//     axios.post('/api/logs', newLog)
-//     .catch((error) => {
-//         console.log(error);
-//         alert('Error with axios.post!')
-//     });  
-// }
-
-
 function* logsSaga() {
     yield takeLatest('GET_LOGS', getLogs);
     yield takeLatest('POST_LOG', postLog);

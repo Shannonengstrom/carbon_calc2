@@ -5,15 +5,14 @@ import Nav from '../../../components/Nav/Nav';
 
 
 
-const mapStateToProps = reduxState => ({
-    reduxState,
+const mapStoreToProps = reduxStore => ({
+    reduxStore,
 });
 
 class AllResultsPage extends Component {
     componentDidMount = () => {
         // use component did mount to dispatch an action to request the AllResultsList from the API
-        this.props.dispatch({type: 'GET_LOGS'
-        });
+        this.props.dispatch({type: 'GET_LOGS'});
     }
     
     render() {
@@ -23,20 +22,19 @@ class AllResultsPage extends Component {
                 <div>
                     <Nav />
                 </div>
-                <pre>{JSON.stringify(this.props.reduxState.logs)}</pre>
+                <pre>{JSON.stringify(this.props.reduxStore)}</pre>
                 <h3>your results : all</h3>
                 <table>
                     <tr>
                         <th>date</th>
-                        {/* <th>mode</th> */}
+                        <th>mode</th>
                         <th>destination</th>
                         <th># of miles</th>
                         <th>notes</th> 
-                        {/* <th>total CO2e</th>
-                        <th>total CO2e saved</th> */}
+                        <th>total CO2e</th>
                     </tr>
                     <tbody>
-                        {this.props.reduxState.logs.logListReducer.map(log => {
+                        {this.props.reduxStore.logs.logListReducer.map(log => {
                             return <AllResultsList logList={log} />
                             })}
                     </tbody>
@@ -54,7 +52,7 @@ class AllResultsPage extends Component {
     }
 }
 
-export default connect(mapStateToProps)(AllResultsPage);
+export default connect(mapStoreToProps)(AllResultsPage);
 
 // notes
 // total CO2e

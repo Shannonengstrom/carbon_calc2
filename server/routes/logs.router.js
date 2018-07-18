@@ -3,15 +3,9 @@ const pool = require('../modules/pool');
 const router = express.Router();
 
 // new log form inputs - POST
-
 router.post('/', (req, res) => {
     console.log('in router.post', req.body);
     const id = req.user.id;
-    // const co2_emis_id = req.body. 
-    // const newInput = req.body.body.newInput; 
-    // console.log('this is newInput:', newInput);
-    // const newCo2 = req.body;
-    // console.log('this is newCo2:', newCo2);
     // const newEmis = req.body.body;
     // console.log('this is newEmis:', newEmis);
     const newLog = req.body;
@@ -37,7 +31,6 @@ router.post('/', (req, res) => {
 
 
 // all results page - GET
-
 router.get('/', (req, res) => {
     console.log('in router.get');
     const queryText = 'SELECT * FROM logs';
