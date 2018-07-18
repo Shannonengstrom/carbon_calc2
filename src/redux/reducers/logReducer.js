@@ -24,7 +24,7 @@ const logListReducer = (state = {}, action) => {
         console.log(`I'm the logListReducer`, action);
         console.log('in reducer: ADD EMIS', action.payload);
         return state = {...state,
-            total_emis: action.payload.total_emis
+            total_emis: action.payload
             };
         }
       return state;

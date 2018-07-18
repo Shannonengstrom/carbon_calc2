@@ -15,9 +15,10 @@ class LogForm extends Component {
                 date: '',
                 miles: 0,
                 notes: '',
-                total_emis: 0,
-                total_saved: 0, 
-            }  
+            }, 
+            newEmis: {
+                total_emis: 0
+            }
         }  
     }
             
@@ -56,42 +57,45 @@ class LogForm extends Component {
     // }
     
 
-    calcEmis = () => {
-        console.log();
+    async calcEmis () {
         const multiplier = this.props.reduxStore.logs.logListReducer.co2_emis;
-        console.log(multiplier);
+        console.log('this is the multiplier:', multiplier);
         const miles = this.state.newInput.miles
-        console.log(miles);
-        const calcEmis = ( multiplier * miles); 
-        const body = calcEmis;
-        console.log(calcEmis);
+        console.log('this is the number of miles:', miles);
+        const newCalc = ( multiplier * miles); 
+        console.log('this is the final emission value:', newCalc);
+        this.state.newEmis = newCalc;
+        const body = this.state.newEmis;
+        console.log('this is the body:', body);
         const action = {type: 'ADD_EMIS', payload: body};
         this.props.dispatch(action);
         console.log(action);
+        await new Promise(resolve => {setTimeout(resolve, 1000)})
+        this.postLog(); 
     };
 
     
     addNewInput = (event) => {
         event.preventDefault();
-        // const co2 = this.props.reduxStore.logs.logListReducer.co2_emis_id;
-        // console.log(co2);
         const body = this.state.newInput;
         console.log(body);
         const action = {type: 'ADD_INPUTS', payload: body};
         this.props.dispatch(action);
         console.log(action);
-        this.postLog(); 
         this.calcEmis();
      }
         
 
   postLog = () => {
-    const body = this.state;
-    const store = this.props.reduxStore.logs.logListReducer
-    console.log('in postLog', body, store);
-    this.props.dispatch({type: 'POST_LOG', payload: 
-            {body: body, co2_emis_id: store.co2_emis_id}
-    })
+    // const newInput = this.props.reduxStore.logs.logListReducer.co2_emis;
+    // const newEmis = this.state.newEmis;
+    const store = this.props.reduxStore.logs.logListReducer;
+    // console.log('in postLog - this is newInput:', newInput);
+    // console.log('in postLog - this is newEmis:', newEmis);
+    console.log('in postLog - this is the store:', store);
+    // this.props.dispatch({type: 'POST_LOG', payload: 
+    //         {newInput: newInput, newEmis: newEmis, co2_emis_id: store.co2_emis_id}
+    // })    
     // this.setState({
     //     newInput: {
     //         destination: '',
