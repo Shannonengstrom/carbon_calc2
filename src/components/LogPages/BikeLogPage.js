@@ -16,13 +16,11 @@ class BikeLogPage extends Component {
         mode: 'bike',
         co2_emis: 3
       }
-         
     }
   }
 
 
   sendMultToRedux = () => {
-    // const body = this.state.co2_emis;
     const body = this.state.defaults;
     console.log(body);
     const action = {type: 'ADD_DEFAULTS', payload: body};
@@ -35,7 +33,6 @@ class BikeLogPage extends Component {
   } 
 
   render() {
-
     return (
       <div className="bikeLogPage">
         <Nav />

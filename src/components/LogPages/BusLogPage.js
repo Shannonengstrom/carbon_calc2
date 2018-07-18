@@ -12,15 +12,18 @@ class BusLogPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        co2_emis: 15
+      defaults: {
+        mode: 'bus',
+        co2_emis: 3
+      }
     }
   }
 
 
   sendMultToRedux = () => {
-    const body = this.state.co2_emis;
+    const body = this.state.defaults;
     console.log(body);
-    const action = {type: 'ADD_MULTIPLIERID', payload: body};
+    const action = {type: 'ADD_DEFAULTS', payload: body};
     this.props.dispatch(action);
     console.log(action);
   }
@@ -30,7 +33,6 @@ class BusLogPage extends Component {
   } 
 
   render() {
-
     return (
       <div className="busLogPage">
         <Nav />
