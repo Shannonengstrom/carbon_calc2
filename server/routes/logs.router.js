@@ -8,21 +8,22 @@ router.post('/', (req, res) => {
     console.log('in router.post', req.body);
     const id = req.user.id;
     // const co2_emis_id = req.body. 
-    const newInput = req.body.body.newInput; 
-    console.log('this is newInput:', newInput);
-    const newCo2 = req.body;
-    console.log('this is newCo2:', newCo2);
-    const newEmis = req.body.body;
-    console.log('this is newEmis:', newEmis);
-    const queryText =  `INSERT INTO logs ("co2_emis_id", "destination", "date", "miles", "notes", "total_emis", "person_id")
+    // const newInput = req.body.body.newInput; 
+    // console.log('this is newInput:', newInput);
+    // const newCo2 = req.body;
+    // console.log('this is newCo2:', newCo2);
+    // const newEmis = req.body.body;
+    // console.log('this is newEmis:', newEmis);
+    const newLog = req.body;
+    const queryText =  `INSERT INTO logs ("co2_emis", "destination", "date", "miles", "notes", "total_emis", "person_id")
                         VALUES ($1, $2, $3, $4, $5, $6, $7)`;
     const queryValues = [
-        newCo2.co2_emis_id,
-        newInput.destination, 
-        newInput.date, 
-        newInput.miles, 
-        newInput.notes,
-        newEmis.total_emis, 
+        newLog.co2_emis,
+        newLog.destination, 
+        newLog.date, 
+        newLog.miles, 
+        newLog.notes,
+        newLog.total_emis, 
         id
     ];
     pool.query(queryText, queryValues)
