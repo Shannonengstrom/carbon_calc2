@@ -33,10 +33,10 @@ const logListReducer = (state = {newLog:[]}, action) => {
     }
 
 
-const totalReducer = (state = {}, action) => {
+const totalReducer = (state = [], action) => {
     if(action.type === 'SET_TOTAL') {
-        console.log(`I'm the logListReducer`, action);
-        return state = {...state, totalEmission: action.payload};
+        console.log(`I'm the logListReducer`, action.payload);
+        return state = action.payload;
         }
     return state;
     }

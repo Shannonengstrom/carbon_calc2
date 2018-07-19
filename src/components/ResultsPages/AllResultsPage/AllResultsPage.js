@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AllResultsList from './AllResultsList/AllResultsList'
-import AllResultsTotal from './AllResultsTotal/AllResultsTotal'
 import Nav from '../../../components/Nav/Nav';
 
 
@@ -24,7 +23,9 @@ class AllResultsPage extends Component {
                 <div>
                     <Nav />
                 </div>
-                <pre>{JSON.stringify(this.props.reduxStore.logs.logListReducer)}</pre>
+                {/* <pre>{JSON.stringify(this.props.reduxStore.logs.logListReducer)}</pre> */}
+                <pre>{JSON.stringify(this.props.reduxStore.logs.totalReducer)}</pre>
+
 
                 <h3>your results : all</h3>
                 <table>
@@ -34,13 +35,20 @@ class AllResultsPage extends Component {
                         <th>destination</th>
                         <th># of miles</th>
                         <th>notes</th> 
-                        <th>total CO2e</th>
+                        <th>CO2e</th>
                     </thead>
                     <tfoot>
                         <tr>
-                            <td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>total</td>
+                            <td> 
                                 {/* <AllResultsTotal /> */}
-                                {this.props.reduxStore.logs.totalReducer.totalEmission}
+                                {this.props.reduxStore.logs.totalReducer.map( total => {
+                                    return total.sum
+                                })}
                             </td>
                         </tr>
                     </tfoot>

@@ -48,6 +48,7 @@ router.get('/', (req, res) => {
     const queryText = `SELECT SUM(total_emis)
     FROM logs`;
     pool.query(queryText).then((result) => {
+        console.log('in router.get for total', result.rows);
         res.send(result.rows);
     }).catch((err) => {
         console.log('error making query', err);
