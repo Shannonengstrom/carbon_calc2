@@ -33,10 +33,21 @@ function* getEmisTotal() {
     }
 }
 
+function* deleteLog(action) {
+    try {
+      yield call(axios.delete, `/api/logs?id=${action.payload}`);
+      yield put ({type: 'GET_LOGS'});
+    } catch ( error ) {
+      console.log('something went wrong', error);
+    }
+  console.log(action);
+  }
+
 function* logsSaga() {
     yield takeLatest('GET_LOGS', getLogs);
     yield takeLatest('POST_LOG', postLog);
     yield takeLatest('GET_TOTAL', getEmisTotal);
+    yield takeLatest('DELETE_LOG', deleteLog);
   }
 
 export default logsSaga;

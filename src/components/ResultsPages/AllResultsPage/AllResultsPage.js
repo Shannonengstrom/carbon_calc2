@@ -36,6 +36,8 @@ class AllResultsPage extends Component {
                         <th># of miles</th>
                         <th>notes</th> 
                         <th>CO2e</th>
+                        <th></th>
+                        <th></th>
                     </thead>
                     <tfoot>
                         <tr>

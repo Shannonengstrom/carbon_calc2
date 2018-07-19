@@ -3,8 +3,12 @@ import { connect } from 'react-redux';
 
 class AllResultsList extends Component {
     
-    // handleDelete = (id) => {
-    //     this.props.dispatch({type: 'DELETE_ELEMENT', payload: id});
+    handleDelete = (id) => {
+        this.props.dispatch({type: 'DELETE_LOG', payload: id});
+    }
+
+    // handlePut = (id) => {
+    //     this.props.dispatch({type: 'PUT_LOG', payload: id});
     // }
 
     render() {
@@ -16,7 +20,8 @@ class AllResultsList extends Component {
                 <td>{this.props.logList.miles}</td>
                 <td>{this.props.logList.notes}</td>
                 <td>{this.props.logList.total_emis}</td>
-                {/* <td onClick={() => {this.handleDelete(this.props.reduxState.log.id)}}>DELETE</td> */}
+                <td onClick={() => {this.handleDelete(this.props.logList.id)}}>delete</td>
+                {/* <td onClick={() => {this.handlePut(this.props.reduxState.log.id)}}>edit</td> */}
              </tr>  
         );
     }
