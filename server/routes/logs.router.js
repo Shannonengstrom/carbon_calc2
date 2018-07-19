@@ -75,6 +75,18 @@ router.get('/', (req, res) => {
         res.sendStatus(500);
       });
   });
+
+  router.get('/:id', (req, res) => {
+    console.log('in router.get');
+    const queryText = 'SELECT * FROM logs WHERE id = $1';
+    const id = req.params.id;
+    pool.query(queryText, [id]).then((result) => {
+        res.send(result.rows);
+    }).catch((err) => {
+        console.log('error making query', err);
+        res.sendStatus(500);
+    });
+  });
   
 
 module.exports = router;

@@ -53,12 +53,26 @@ function* updateLog(action) {
   console.log(action);
   }
 
+  function* getLogById(action) {
+    try { 
+        console.log('log in get log by id', action.payload);
+        const logResponse = yield call(axios.get, `/api/logs?=${action.payload}`);
+        yield put( {type: 'SET_LOG_BY_ID', 
+                    payload: logResponse.data})
+    } catch (error) {
+        console.log('bad things happened', error); 
+    }
+}
+
+  
+
 function* logsSaga() {
     yield takeLatest('GET_LOGS', getLogs);
     yield takeLatest('POST_LOG', postLog);
     yield takeLatest('GET_TOTAL', getEmisTotal);
     yield takeLatest('DELETE_LOG', deleteLog);
     yield takeLatest('UPDATE_LOG', updateLog);
+    yield takeLatest('GET_LOG_BY_ID', getLogById);
   }
 
 export default logsSaga;

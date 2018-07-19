@@ -22,7 +22,10 @@ class AllResultsList extends Component {
                 <td>{this.props.logList.notes}</td>
                 <td>{this.props.logList.total_emis}</td>
                 <td onClick={() => {this.handleDelete(this.props.logList.id)}}>delete</td>
-                <td><EditLogItem /></td>
+                <td><EditLogItem 
+                    id={this.props.logList.id}
+                    mode={this.props.logList.mode}
+                    co2_emis={this.props.logList.co2_emis}/></td>
              </tr>  
         );
     }

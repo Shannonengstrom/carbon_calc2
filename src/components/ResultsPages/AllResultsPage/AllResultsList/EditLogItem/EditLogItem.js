@@ -4,8 +4,9 @@ import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 import EditLogForm from './EditLogForm/EditLogForm';
+import qs from 'query-string';
 
 function rand() {
     return Math.round(Math.random() * 20) - 10;
@@ -38,10 +39,12 @@ const styles = theme => ({
 
 
 class EditLogItem extends Component {
-
-    state = {
+    constructor(props) {
+    super(props);
+    this.state = {
         open: false
     };
+}
     
     // handlePut = (id) => {
     //     this.props.dispatch({type: 'PUT_LOG', payload: id});
@@ -59,9 +62,13 @@ class EditLogItem extends Component {
     render() {
         const { classes } = this.props;
         return (
+            
             <div>
+                <pre>{JSON.stringify(this.props.id)}</pre>
                 {/* <Typography gutterBottom>Click to get the full Modal experience!</Typography> */}
-                <p onClick={this.handleOpen}>edit</p>
+                <p onClick = {() => this.handleOpen(
+                    this.props.id, this.props.mode, this.props.co2_emis
+                    )}>edit</p>
                 {/* <td onClick={() => {this.handlePut(this.props.reduxState.log.id)}}>edit</td>  */}
                 {/* <td onClick={this.handleOpen}>edit</td> */}
                 <Modal
@@ -72,13 +79,15 @@ class EditLogItem extends Component {
                 >
                     <div style={getModalStyle()} className={classes.paper}>
                     <Typography variant="title" id="modal-title">
-                        edit your log
+                        modify your log entry
                     </Typography>
-                        <EditLogForm />
-                    <Typography variant="subheading" id="simple-modal-description">
+                    {/* <Typography variant="subheading" id="simple-modal-description">
                         Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-                    </Typography>
-                        <EditLogItemWrapped />
+                    </Typography> */}
+                    <EditLogForm id={this.props.id}
+                                 id={this.props.mode}
+                                 id={this.props.co2_emis}/>
+                        {/* <EditLogItemWrapped /> */}
                     </div>
                 </Modal>
             </div>
