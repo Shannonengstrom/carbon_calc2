@@ -9,8 +9,8 @@ router.post('/', (req, res) => {
     // const newEmis = req.body.body;
     // console.log('this is newEmis:', newEmis);
     const newLog = req.body;
-    const queryText =  `INSERT INTO logs ("mode", co2_emis", "destination", "date", "miles", "notes", "total_emis", "person_id")
-                        VALUES ($1, $2, $3, $4, $5, $6, $7)`;
+    const queryText =  `INSERT INTO logs ("mode", "co2_emis", "destination", "date", "miles", "notes", "total_emis", "person_id")
+                        VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`;
     const queryValues = [
         newLog.mode,
         newLog.co2_emis,
