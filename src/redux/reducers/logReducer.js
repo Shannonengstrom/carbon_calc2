@@ -29,6 +29,16 @@ const logListReducer = (state = {newLog:[]}, action) => {
             total_emis: action.payload
             };
         }
+    if(action.type === 'UPDATE_LOG') {
+        console.log(`I'm the logListReducer`, action);
+        console.log('in reducer: UPDATE LOG', action.payload);
+        return state = {...state,
+            destination: action.payload.destination, 
+            date: action.payload.date,
+            miles: action.payload.miles,
+            notes: action.payload.notes
+            };
+        }
         return state;
     }
 
