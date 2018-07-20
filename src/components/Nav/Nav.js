@@ -47,7 +47,7 @@ class Nav extends Component {
             <ul>
               <li>
                 <Link to="/user">
-                  User Home
+                  Home
                 </Link>
               </li>
               <li>
