@@ -39,7 +39,8 @@ class DashboardPage extends Component {
         <Nav />
         { content }
         <DashboardLinks />
-        <DashboardChart />
+        {/* <DashboardChart /> */}
+        
         {/* <canvas id="myChart" width="400" height="400"></canvas>
         const ctx = document.getElementById("myChart").getContext("2d"); */}
 

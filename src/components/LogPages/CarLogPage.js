@@ -14,7 +14,7 @@ class CarLogPage extends Component {
     this.state = {
       defaults: {
         mode: 'car',
-        co2_emis: 10
+        co2_emis: 15
       }
     }
   }

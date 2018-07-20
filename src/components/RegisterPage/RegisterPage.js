@@ -73,7 +73,7 @@ class RegisterPage extends Component {
           <h1>REGISTER</h1>
           <div>
             <label htmlFor="username">
-              USERNAME
+              username
               <input
                 type="text"
                 name="username"
@@ -84,7 +84,7 @@ class RegisterPage extends Component {
           </div>
           <div>
             <label htmlFor="password">
-              PASSWORD
+              password
               <input
                 type="password"
                 name="password"
