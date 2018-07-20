@@ -12,11 +12,17 @@ const mapStoreToProps = reduxStore => ({
 });
 
 class AllResultsPage extends Component {
+    
+
     componentDidMount = () => {
         // use component did mount to dispatch an action to request the AllResultsList from the API
         this.props.dispatch({type: USER_ACTIONS.FETCH_USER});
-        this.props.dispatch({type: 'GET_LOGS'});
+        this.getLogs(); 
         this.props.dispatch({type: 'GET_TOTAL'});
+    }
+
+    getLogs = () => {
+        this.props.dispatch({type: 'GET_LOGS', payload: this.props.user.id});
     }
 
     componentDidUpdate() {
@@ -32,8 +38,10 @@ class AllResultsPage extends Component {
                 <div>
                     <Nav />
                 </div>
-                <pre>{JSON.stringify(this.props.reduxStore.logs.logListReducer)}</pre>
-                <pre>{JSON.stringify(this.props.reduxStore.logs.totalReducer)}</pre>
+                {/* <pre>{JSON.stringify(this.props.reduxStore.logs.logListReducer)}</pre> */}
+                {/* <pre>{JSON.stringify(this.props.reduxStore.logs.totalReducer)}</pre> */}
+                <pre>{JSON.stringify(this.props.user.id)}</pre>
+
 
 
                 <h3>your results : all</h3>

@@ -33,12 +33,15 @@ router.post('/', (req, res) => {
 
 // all results page - GET
 router.get('/', (req, res) => {
-    console.log('in router.get', req.body);
-    // id = req.body.person_id;
-    const queryText = `SELECT * FROM logs WHERE person_id=14 
+    console.log('this is req.user:', req.user.id);
+    const id = req.user.id;
+    const queryText = `SELECT * FROM logs WHERE person_id=$1 
     ORDER BY id ASC`;
-    pool.query(queryText).then((result) => {
+    // const queryText = `SELECT * FROM logs`;
+    pool.query(queryText, [id]).then((result) => {
         res.send(result.rows);
+        console.log('this is result.rows:', result.rows);
+        
     }).catch((err) => {
         console.log('error making query', err);
         res.sendStatus(500);

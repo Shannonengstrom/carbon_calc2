@@ -8,8 +8,6 @@ import Modal from '@material-ui/core/Modal';
 //page to do: 
 /// fill input field default values 
 /// get multiplier through props on initial get and use that to multiply and get calc, don't allow them to change modes
-///figure out why save button is below form 
-//add order by so that the table loads in same order everytime - by id
   
 function getModalStyle() {
     const top = 50;

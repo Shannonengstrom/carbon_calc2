@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { takeLatest, takeEvery, call, put } from 'redux-saga/effects';
 
-function* getLogs() {
+function* getLogs(action) {
     try { 
-        console.log('log in get logs');
+        console.log('log in get logs', action);
         const logsResponse = yield call(axios.get, '/api/logs');
         yield put( {type: 'SET_LOGS', 
                     payload: logsResponse.data})
