@@ -35,7 +35,8 @@ router.post('/', (req, res) => {
 router.get('/', (req, res) => {
     console.log('in router.get', req.body);
     // id = req.body.person_id;
-    const queryText = `SELECT * FROM logs WHERE person_id=14`;
+    const queryText = `SELECT * FROM logs WHERE person_id=14 
+    ORDER BY id ASC`;
     pool.query(queryText).then((result) => {
         res.send(result.rows);
     }).catch((err) => {
