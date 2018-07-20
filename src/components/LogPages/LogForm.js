@@ -35,6 +35,16 @@ class LogForm extends Component {
             };
         }
 
+    addNewInput = (event) => {
+        event.preventDefault();
+        const body = this.state.newInput;
+        console.log(body);
+        const action = {type: 'ADD_INPUTS', payload: body};
+        this.props.dispatch(action);
+        console.log(action);
+        this.calcEmis();
+        }
+
     async calcEmis () {
         const multiplier = this.props.reduxStore.logs.logListReducer.co2_emis;
         console.log('this is the multiplier:', multiplier);
@@ -53,15 +63,7 @@ class LogForm extends Component {
     };
 
     
-    addNewInput = (event) => {
-        event.preventDefault();
-        const body = this.state.newInput;
-        console.log(body);
-        const action = {type: 'ADD_INPUTS', payload: body};
-        this.props.dispatch(action);
-        console.log(action);
-        this.calcEmis();
-     }
+   
         
 
   postLog = () => {

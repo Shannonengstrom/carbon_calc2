@@ -45,8 +45,7 @@ function* deleteLog(action) {
 
 function* updateLog(action) {
     try {
-      yield call(axios.put, `/api/logs?id=${action.payload}`);
-      yield put ({type: 'GET_LOGS'});
+      yield call(axios.put, '/api/logs/edit', action.payload);
     } catch ( error ) {
       console.log('something went wrong', error);
     }

@@ -32,13 +32,7 @@ const logListReducer = (state = {newLog:[]}, action) => {
             total_emis: action.payload
             };
         }
-    if(action.type === 'UPDATE_EMIS') {
-        console.log(`I'm the logListReducer`, action);
-        console.log('in reducer: UPDATE EMIS', action.payload);
-        return state = {...state,
-            total_emis: action.payload
-            };
-        }
+ 
     // if(action.type === 'GET_DEFAULTS') {
     //     console.log(`I'm the logListReducer`, action);
     //     console.log('in reducer: GET DEFAULTS', action.payload);
@@ -52,7 +46,7 @@ const logListReducer = (state = {newLog:[]}, action) => {
 
 const updateReducer = (state = {}, action) => {
     if(action.type === 'UPDATE_INPUTS') {
-        console.log(`I'm the logListReducer`, action);
+        console.log(`I'm the updateReducer`, action);
         console.log('in reducer: UPDATE INPUTS', action.payload);
         return state = {...state,
             mode: action.payload.mode,
@@ -60,10 +54,16 @@ const updateReducer = (state = {}, action) => {
             destination: action.payload.destination, 
             date: action.payload.date,
             miles: action.payload.miles,
-            notes: action.payload.notes, 
-            total_emis: action.payload.total_emis
+            notes: action.payload.notes 
             };
         }
+    // if(action.type === 'UPDATE_EMIS') {
+    //     console.log(`I'm the logListReducer`, action);
+    //     console.log('in reducer: UPDATE EMIS', action.payload);
+    //     return state = {...state,
+    //         total_emis: action.payload
+    //         };
+    //     }
     if(action.type === 'SET_LOG_BY_ID') {
         console.log(`I'm the updateReducer`, action);
         return state = {...state, 

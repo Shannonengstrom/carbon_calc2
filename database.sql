@@ -26,3 +26,7 @@ VALUES ('bike', 30, 'work', '09-15-1991', 5.3, '', 10, 1);
 
 SELECT SUM(total_emis)
 FROM logs;
+
+UPDATE logs
+SET mode = $1, co2_emis = $2, destination = $3, date = $4, miles = $5, notes = $6
+WHERE id = ${id};

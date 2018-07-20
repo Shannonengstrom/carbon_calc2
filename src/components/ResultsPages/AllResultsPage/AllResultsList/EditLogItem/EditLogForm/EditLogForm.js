@@ -15,15 +15,16 @@ class EditLogForm extends Component {
 
     passId = () => {
         const id = this.props.id;
-        this.props.dispatch({type: 'GET_LOG_BY_ID', payload: id});
+        // this.props.dispatch({type: 'GET_LOG_BY_ID', payload: id});
     }
 
     constructor(props) {
         super(props);
         this.state = {
             modifiedInput: {
+                id: this.props.id,
                 mode: '',
-                co2_emis: 0,
+                co2_emis: 10,
                 destination: '',
                 date: '',
                 miles:'',
@@ -45,26 +46,7 @@ class EditLogForm extends Component {
             };
             console.log('the new state', this.state.modifiedInput);  
         }
-
-    async calcEmis () {
-        const multiplier = this.props.reduxStore.logs.logListReducer.co2_emis;
-        console.log('this is the multiplier:', multiplier);
-        const miles = this.state.modifiedInput.miles
-        console.log('this is the number of miles:', miles);
-        const newCalc = ( multiplier * miles); 
-        console.log('this is the final emission value:', newCalc);
-        this.state.newEmis = newCalc;
-        const body = this.state.newEmis;
-        console.log('this is the body:', body);
-        const action = {type: 'UPDATE_EMIS', payload: body};
-        this.props.dispatch(action);
-        console.log(action);
-        await new Promise(resolve => {setTimeout(resolve, 100)})
-        // this.postLog(); 
-    };
-
-    
-    updateLog = (id) => {
+    updateInputs = () => {
         // event.preventDefault();
         const body = this.state.modifiedInput;
         console.log(body);
@@ -72,15 +54,35 @@ class EditLogForm extends Component {
         this.props.dispatch(action);
         console.log(action);
         this.calcEmis();
-     }
+        }
+
+    async calcEmis () {
+        const multiplier = this.state.modifiedInput.co2_emis;
+        console.log('this is the multiplier:', multiplier);
+        const miles = this.state.modifiedInput.miles
+        console.log('this is the number of miles:', miles);
+        const newCalc = ( multiplier * miles); 
+        console.log('this is the final emission value:', newCalc);
+        this.state.modifiedInput.total_emis = newCalc;
+        // const body = this.state.newEmis;
+        // console.log('this is the body:', body);
+        // const action = {type: 'UPDATE_EMIS', payload: body};
+        // this.props.dispatch(action);
+        // console.log(action);
+        // await new Promise(resolve => {setTimeout(resolve, 100)})
+        this.updateLog(); 
+    };
+
+    
+   
         
 
-//   postLog = () => {
-//     const body = this.props.reduxStore.logs.logListReducer;
-//     console.log('in postLog - this is the store:', body);
-//     this.props.dispatch({type: 'POST_LOG', payload: body})
-//     this.clearInputs();    
-// }
+  updateLog = () => {
+    const body = this.state.modifiedInput;
+    console.log('in updateLog - this is the store:', body);
+    this.props.dispatch({type: 'UPDATE_LOG', payload: body})
+    // this.clearInputs();    
+}
 
 // clearInputs() {
 //     this.setState({
@@ -99,12 +101,11 @@ class EditLogForm extends Component {
     render() {
         return (
             <div>
-               {console.log(this.props)}
-            <pre>{JSON.stringify(this.props)}</pre>
+               {console.log(this.state)}
             <pre>{JSON.stringify(this.state)}</pre>
             <pre>{JSON.stringify(this.props.reduxStore.logs.updateReducer)}</pre>
 
-                <form onSubmit={() => this.updateLog(this.props.id)}> 
+                <form onSubmit={() => this.updateInputs(this.props.id)}> 
                     <label>mode
                     <input 
                             value={this.props.reduxStore.logs.updateReducer.mode}
@@ -113,11 +114,11 @@ class EditLogForm extends Component {
                             />
                     </label>   
                     <br />
-                    {/* <label>emission multiplier
+                    <label>emission multiplier
                     <input 
                             // value={this.state.modifiedInput.notes}
                             type='text' 
-                            onChange={this.handleOnChange('multiplier')} 
+                            onChange={this.handleOnChange('co2_emis')} 
                             />
                     </label>
                     <label>destination
@@ -152,7 +153,7 @@ class EditLogForm extends Component {
                             onChange={this.handleOnChange('notes')} 
                             />
                     </label>
-                    <br /> */}
+                    <br />
                     <input type='submit' value='SAVE'/>
                 </form>
             </div>

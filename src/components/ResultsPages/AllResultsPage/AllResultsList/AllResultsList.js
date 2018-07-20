@@ -24,8 +24,10 @@ class AllResultsList extends Component {
                 <td onClick={() => {this.handleDelete(this.props.logList.id)}}>delete</td>
                 <td><EditLogItem 
                     id={this.props.logList.id}
-                    mode={this.props.logList.mode}
-                    co2_emis={this.props.logList.co2_emis}/></td>
+                    // mode={this.props.logList.mode}
+                    // co2_emis={this.props.logList.co2_emis}
+                    />
+                    </td>
              </tr>  
         );
     }

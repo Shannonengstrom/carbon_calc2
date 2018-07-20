@@ -66,12 +66,26 @@ router.get('/', (req, res) => {
       });
   });
 
-  router.put('/', (req, res) => {
-    const queryText = `DELETE FROM logs WHERE id=$1`;
-    pool.query(queryText, [req.query.id])
+  router.put('/edit', (req, res) => {
+    const edit = req.body;
+    const id = req.body.id;
+    console.log('in edit router put - req.body:', edit);
+    console.log('in router put - id:', id);
+    const queryText = `UPDATE logs
+    SET mode = $1, co2_emis = $2, destination = $3, date = $4, miles = $5, notes = $6
+    WHERE id = ${id};`;
+    const queryValues = [
+        edit.mode, 
+        edit.co2_emis, 
+        edit.destination, 
+        edit.date, 
+        edit.miles, 
+        edit.notes
+    ];
+    pool.query(queryText, queryValues)
       .then(() => { res.sendStatus(200); })
       .catch((err) => {
-        console.log('Error completing DELETE logs query', err);
+        console.log('Error updating logs query', err);
         res.sendStatus(500);
       });
   });

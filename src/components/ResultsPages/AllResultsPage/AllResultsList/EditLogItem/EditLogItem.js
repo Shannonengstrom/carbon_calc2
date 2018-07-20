@@ -45,10 +45,6 @@ class EditLogItem extends Component {
         open: false
     };
 }
-    
-    // handlePut = (id) => {
-    //     this.props.dispatch({type: 'PUT_LOG', payload: id});
-    // }
 
     handleOpen = () => {
         this.setState({ open: true });
@@ -66,9 +62,7 @@ class EditLogItem extends Component {
             <div>
                 <pre>{JSON.stringify(this.props.id)}</pre>
                 {/* <Typography gutterBottom>Click to get the full Modal experience!</Typography> */}
-                <p onClick = {() => this.handleOpen(
-                    this.props.id, this.props.mode, this.props.co2_emis
-                    )}>edit</p>
+                <p onClick = {() => this.handleOpen(this.props.id)}>edit</p>
                 {/* <td onClick={() => {this.handlePut(this.props.reduxState.log.id)}}>edit</td>  */}
                 {/* <td onClick={this.handleOpen}>edit</td> */}
                 <Modal
@@ -84,9 +78,7 @@ class EditLogItem extends Component {
                     {/* <Typography variant="subheading" id="simple-modal-description">
                         Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
                     </Typography> */}
-                    <EditLogForm id={this.props.id}
-                                 id={this.props.mode}
-                                 id={this.props.co2_emis}/>
+                    <EditLogForm id={this.props.id}/>
                         {/* <EditLogItemWrapped /> */}
                     </div>
                 </Modal>
