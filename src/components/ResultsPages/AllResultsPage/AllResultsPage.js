@@ -32,8 +32,8 @@ class AllResultsPage extends Component {
                 <div>
                     <Nav />
                 </div>
-                {/* <pre>{JSON.stringify(this.props.reduxStore.logs.logListReducer)}</pre> */}
-                {/* <pre>{JSON.stringify(this.props.reduxStore.logs.totalReducer)}</pre> */}
+                <pre>{JSON.stringify(this.props.reduxStore.logs.logListReducer)}</pre>
+                <pre>{JSON.stringify(this.props.reduxStore.logs.totalReducer)}</pre>
 
 
                 <h3>your results : all</h3>

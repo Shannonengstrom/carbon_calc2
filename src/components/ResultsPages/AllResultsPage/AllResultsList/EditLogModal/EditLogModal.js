@@ -9,6 +9,7 @@ import Modal from '@material-ui/core/Modal';
 /// fill input field default values 
 /// get multiplier through props on initial get and use that to multiply and get calc, don't allow them to change modes
 ///figure out why save button is below form 
+//add order by so that the table loads in same order everytime - by id
   
 function getModalStyle() {
     const top = 50;
@@ -43,13 +44,14 @@ class EditLogModal extends Component {
         this.state = {
             modifiedInput: {
                 id: this.props.id,
-                // mode: '',
-                // co2_emis: 10,
-                // destination: '',
-                // date: '',
-                // miles:'',
-                // notes: '',
-                // total_emis: 0
+                mode: this.props.mode,
+                co2_emis: this.props.co2_emis,
+                destination: this.props.destination,
+                date: this.props.date,
+                miles: this.props.miles,
+                notes: this.props.notes,
+                total_emis: this.props.total_emis,
+                person_id: this.props.person_id,
             }, 
             open: false
         }  
@@ -130,10 +132,10 @@ class EditLogModal extends Component {
         return (
             
             <div>
-                {console.log(this.state)}
+                {console.log('state on load',this.state)}
                 {/* <pre>{JSON.stringify(this.state)}</pre> */}
                 {/* <pre>{JSON.stringify(this.props.reduxStore.logs.updateReducer)}</pre> */}
-                {/* <pre>{JSON.stringify(this.props.id)}</pre> */}
+                <pre>{JSON.stringify(this.props.id)}</pre>
                 {/* <Typography gutterBottom>Click to get the full Modal experience!</Typography> */}
                 <p onClick = {() => this.handleOpen(this.props.id)}>edit</p>
                 {/* <td onClick={() => {this.handlePut(this.props.reduxState.log.id)}}>edit</td>  */}
@@ -148,13 +150,10 @@ class EditLogModal extends Component {
                         <Typography variant="title" id="modal-title">
                             modify your log entry
                         </Typography>
-                    {/* <Typography variant="subheading" id="simple-modal-description">
-                        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-                    </Typography> */}
                             <form onSubmit={() => this.updateInputs(this.props.id)}> 
                             <label>mode
                             <input 
-                                    defaultValue= {this.props.reduxStore.logs.updateReducer.mode}
+                                    defaultValue= {this.props.mode}
                                     value={this.state.modifiedInput.mode}
                                     type='text' 
                                     onChange={this.handleOnChange('mode')} 
@@ -163,6 +162,7 @@ class EditLogModal extends Component {
                             <br />
                             <label>emission multiplier
                             <input 
+                                    defaultValue= {this.props.co2_emis}
                                     // value={this.state.modifiedInput.notes}
                                     type='text' 
                                     onChange={this.handleOnChange('co2_emis')} 
@@ -170,6 +170,8 @@ class EditLogModal extends Component {
                             </label>
                             <label>destination
                             <input 
+                                    
+                                    defaultValue= {this.props.destination}
                                     // value={this.state.modifiedInput.destination}
                                     type='text' 
                                     onChange={this.handleOnChange('destination')} 
@@ -178,14 +180,16 @@ class EditLogModal extends Component {
                             <br />
                             <label>date
                             <input 
+                                    defaultValue= {this.props.date.split('T')[0]}
                                     // value={this.state.modifiedInput.date}
-                                    type='date' 
+                                    type='text' 
                                     onChange={this.handleOnChange('date')} 
                                     />
                             </label>
                             <br />
                             <label>miles
                             <input 
+                                    defaultValue= {this.props.miles}
                                     // value={this.state.modifiedInput.miles}
                                     type='number' 
                                     step="any" 
@@ -196,6 +200,7 @@ class EditLogModal extends Component {
                             <label>notes
                             <input 
                                     // value={this.state.modifiedInput.notes}
+                                    defaultValue= {this.props.notes}
                                     type='text' 
                                     onChange={this.handleOnChange('notes')} 
                                     />
