@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import EditLogItem from './EditLogItem/EditLogItem';
+import EditLogModal from './EditLogModal/EditLogModal';
 
 const mapStoreToProps = reduxStore => ({
     reduxStore,
@@ -22,7 +22,7 @@ class AllResultsList extends Component {
                 <td>{this.props.logList.notes}</td>
                 <td>{this.props.logList.total_emis}</td>
                 <td onClick={() => {this.handleDelete(this.props.logList.id)}}>delete</td>
-                <td><EditLogItem 
+                <td><EditLogModal 
                     id={this.props.logList.id}
                     // mode={this.props.logList.mode}
                     // co2_emis={this.props.logList.co2_emis}
