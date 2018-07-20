@@ -90,7 +90,7 @@ clearInputs() {
     render() {
         return (
             <div>
-            <pre>{JSON.stringify(this.state)}</pre>
+            {/* <pre>{JSON.stringify(this.state)}</pre> */}
                 <form onSubmit={this.addNewInput}>    
                     <label>destination
                     <input 

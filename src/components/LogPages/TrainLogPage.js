@@ -37,7 +37,7 @@ class TrainLogPage extends Component {
       <div className="trainLogPage">
         <Nav />
         <h2>new log : train</h2>
-        <pre>{JSON.stringify(this.state)}</pre>
+        {/* <pre>{JSON.stringify(this.state)}</pre> */}
         <LogForm co2={this.state}/>
       </div>
     );

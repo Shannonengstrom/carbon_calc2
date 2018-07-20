@@ -72,7 +72,7 @@ router.get('/', (req, res) => {
     console.log('in edit router put - req.body:', edit);
     console.log('in router put - id:', id);
     const queryText = `UPDATE logs
-    SET mode = $1, co2_emis = $2, destination = $3, date = $4, miles = $5, notes = $6
+    SET "mode" = $1, "co2_emis" = $2, "destination" = $3, "date" = $4, "miles" = $5, "notes" = $6, "total_emis" = $7
     WHERE id = ${id};`;
     const queryValues = [
         edit.mode, 
@@ -80,7 +80,8 @@ router.get('/', (req, res) => {
         edit.destination, 
         edit.date, 
         edit.miles, 
-        edit.notes
+        edit.notes, 
+        edit.total_emis
     ];
     pool.query(queryText, queryValues)
       .then(() => { res.sendStatus(200); })

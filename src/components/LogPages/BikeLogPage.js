@@ -37,7 +37,7 @@ class BikeLogPage extends Component {
       <div className="bikeLogPage">
         <Nav />
         <h2>new log : bike</h2>
-        <pre>{JSON.stringify(this.state)}</pre>
+        {/* <pre>{JSON.stringify(this.state)}</pre> */}
         <LogForm co2={this.state}/>
       </div>
     );

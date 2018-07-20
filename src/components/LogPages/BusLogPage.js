@@ -37,7 +37,7 @@ class BusLogPage extends Component {
       <div className="busLogPage">
         <Nav />
         <h2>new log : bus</h2>
-        <pre>{JSON.stringify(this.state)}</pre>
+        {/* <pre>{JSON.stringify(this.state)}</pre> */}
         <LogForm co2={this.state}/>
       </div>
     );
