@@ -72,9 +72,7 @@ const updateReducer = (state = {}, action) => {
             destination: action.payload.destination, 
             date: action.payload.date,
             miles: action.payload.miles,
-            notes: action.payload.notes, 
-            total_emis: action.payload.total_emis
-            };
+            notes: action.payload.notes };
         }
     return state;
 };

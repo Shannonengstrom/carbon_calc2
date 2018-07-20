@@ -35,7 +35,7 @@ class AllResultsPage extends Component {
                         <th>destination</th>
                         <th># of miles</th>
                         <th>notes</th> 
-                        <th>CO2e</th>
+                        <th>CO2 emissions</th>
                         <th></th>
                         <th></th>
                     </thead>

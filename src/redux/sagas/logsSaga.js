@@ -55,7 +55,7 @@ function* updateLog(action) {
   function* getLogById(action) {
     try { 
         console.log('log in get log by id', action.payload);
-        const logResponse = yield call(axios.get, `/api/logs?=${action.payload}`);
+        const logResponse = yield call(axios.get, `/api/logs/update/${action.payload}`);
         yield put( {type: 'SET_LOG_BY_ID', 
                     payload: logResponse.data})
     } catch (error) {

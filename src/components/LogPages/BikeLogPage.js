@@ -14,7 +14,7 @@ class BikeLogPage extends Component {
     this.state = {
       defaults: {
         mode: 'bike',
-        co2_emis: 3
+        co2_emis: 0
       }
     }
   }

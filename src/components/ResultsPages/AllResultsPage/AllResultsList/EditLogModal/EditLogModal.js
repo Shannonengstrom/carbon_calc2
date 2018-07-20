@@ -6,6 +6,11 @@ import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
 // import qs from 'query-string';
 
+//page to do: 
+/// fill input field default values 
+/// get multiplier through props on initial get and use that to multiply and get calc, don't allow them to change modes
+///figure out why save button is below form 
+
 function rand() {
     return Math.round(Math.random() * 20) - 10;
   }
@@ -27,7 +32,7 @@ const styles = theme => ({
       width: theme.spacing.unit * 50,
       backgroundColor: theme.palette.background.paper,
       boxShadow: theme.shadows[5],
-      padding: theme.spacing.unit * 4,
+      padding: theme.spacing.unit * 7,
     },
   });
 
@@ -43,13 +48,14 @@ class EditLogModal extends Component {
         this.state = {
             modifiedInput: {
                 id: this.props.id,
-                mode: '',
-                co2_emis: 10,
-                destination: '',
-                date: '',
-                miles:'',
-                notes: '',
-                total_emis: 0}, 
+                // mode: '',
+                // co2_emis: 10,
+                // destination: '',
+                // date: '',
+                // miles:'',
+                // notes: '',
+                // total_emis: 0
+            }, 
             open: false
         }  
     }
@@ -59,8 +65,10 @@ class EditLogModal extends Component {
     }
 
     passId = () => {
-        const id = this.props.id;
-        this.props.dispatch({type: 'GET_LOG_BY_ID', payload: id});
+        const id = this.state.modifiedInput.id;
+        console.log('in passId', id);
+        
+        // this.props.dispatch({type: 'GET_LOG_BY_ID', payload: id});
     }
 
     handleOpen = () => {
@@ -110,6 +118,9 @@ class EditLogModal extends Component {
         // await new Promise(resolve => {setTimeout(resolve, 100)})
         this.updateLog();
         this.handleClose();
+        window.location.reload();
+
+        // function thate reroutes to page on click
     };
         
 
@@ -139,16 +150,17 @@ class EditLogModal extends Component {
                     onClose={this.handleClose}
                 >
                     <div style={getModalStyle()} className={classes.paper}>
-                    <Typography variant="title" id="modal-title">
-                        modify your log entry
-                    </Typography>
+                        <Typography variant="title" id="modal-title">
+                            modify your log entry
+                        </Typography>
                     {/* <Typography variant="subheading" id="simple-modal-description">
                         Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
                     </Typography> */}
                             <form onSubmit={() => this.updateInputs(this.props.id)}> 
                             <label>mode
                             <input 
-                                    value={this.props.reduxStore.logs.updateReducer.mode}
+                                    defaultValue= {this.props.reduxStore.logs.updateReducer.mode}
+                                    value={this.state.modifiedInput.mode}
                                     type='text' 
                                     onChange={this.handleOnChange('mode')} 
                                     />
@@ -193,8 +205,11 @@ class EditLogModal extends Component {
                                     onChange={this.handleOnChange('notes')} 
                                     />
                             </label>
+                            <label>
                             <br />
                             <input type='submit' value='SAVE'/>
+                            <br />
+                            </label>
                         </form>
                     </div>
                 </Modal>
