@@ -122,7 +122,9 @@ class EditLogModal extends Component {
   updateLog = () => {
     const body = this.state.modifiedInput;
     console.log('in updateLog - this is the store:', body);
-    this.props.dispatch({type: 'UPDATE_LOG', payload: body})
+    this.props.dispatch({type: 'UPDATE_LOG', payload: body});
+    this.props.dispatch({type: 'GET_TOTAL'});
+
   }
 
     render() {

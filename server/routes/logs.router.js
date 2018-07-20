@@ -37,7 +37,6 @@ router.get('/', (req, res) => {
     const id = req.user.id;
     const queryText = `SELECT * FROM logs WHERE person_id=$1 
     ORDER BY id ASC`;
-    // const queryText = `SELECT * FROM logs`;
     pool.query(queryText, [id]).then((result) => {
         res.send(result.rows);
         console.log('this is result.rows:', result.rows);
@@ -49,10 +48,11 @@ router.get('/', (req, res) => {
   });
 
   router.get('/total', (req, res) => {
-    console.log('in router.get');
+    console.log('in router.get/total - this is req.user:', req.user.id);
+    const id = req.user.id;
     const queryText = `SELECT SUM(total_emis)
-    FROM logs`;
-    pool.query(queryText).then((result) => {
+    FROM logs WHERE person_id=$1`;
+    pool.query(queryText, [id]).then((result) => {
         console.log('in router.get for total', result.rows);
         res.send(result.rows);
     }).catch((err) => {
