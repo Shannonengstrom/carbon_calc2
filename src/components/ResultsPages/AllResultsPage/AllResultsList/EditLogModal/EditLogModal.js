@@ -4,16 +4,11 @@ import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
-// import qs from 'query-string';
 
 //page to do: 
 /// fill input field default values 
 /// get multiplier through props on initial get and use that to multiply and get calc, don't allow them to change modes
 ///figure out why save button is below form 
-
-function rand() {
-    return Math.round(Math.random() * 20) - 10;
-  }
   
 function getModalStyle() {
     const top = 50;

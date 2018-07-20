@@ -2,19 +2,28 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AllResultsList from './AllResultsList/AllResultsList'
 import Nav from '../../../components/Nav/Nav';
+import { USER_ACTIONS } from '../../../redux/actions/userActions';
 
 
 
 const mapStoreToProps = reduxStore => ({
     reduxStore,
+    user: reduxStore.user,
 });
 
 class AllResultsPage extends Component {
     componentDidMount = () => {
         // use component did mount to dispatch an action to request the AllResultsList from the API
+        this.props.dispatch({type: USER_ACTIONS.FETCH_USER});
         this.props.dispatch({type: 'GET_LOGS'});
         this.props.dispatch({type: 'GET_TOTAL'});
     }
+
+    componentDidUpdate() {
+        if (!this.props.user.isLoading && this.props.user.userName === null) {
+          this.props.history.push('home');
+        }
+      }
     
     render() {
         return (

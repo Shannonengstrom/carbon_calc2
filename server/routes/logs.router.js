@@ -33,8 +33,9 @@ router.post('/', (req, res) => {
 
 // all results page - GET
 router.get('/', (req, res) => {
-    console.log('in router.get');
-    const queryText = 'SELECT * FROM logs';
+    console.log('in router.get', req.body);
+    // id = req.body.person_id;
+    const queryText = `SELECT * FROM logs WHERE person_id=14`;
     pool.query(queryText).then((result) => {
         res.send(result.rows);
     }).catch((err) => {
