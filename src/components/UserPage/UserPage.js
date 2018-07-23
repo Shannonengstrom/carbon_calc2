@@ -25,43 +25,77 @@ class UserPage extends Component {
       <div>
         <Nav />
         {/* { content } */}
-        <div className="tile-container">
-          <div className="tile-cell">
+          <div className="top">
+            <div>
+            </div>
+            <div>
+              <h1>Welcome!</h1>
+              <p>CarbonCalc motivates you to use non-motorized transportation by helping you track your daily trips and your overall transport carbon footprint. </p>
+            </div>
+            <div>
+            </div>
+          </div>
+          <br />
+      
+          <div className="tile-container">
             <div className="tile-car">
-              <Link to="/carlog">
-                  + car
-              </Link>
+                <Link to="/carlog" className="tile-car">
+                    + car
+                </Link>
             </div>
-          </div>
-          <div className="tile-cell">
             <div className="tile-walk">
-              <Link to="/walklog">
-                  + walk
-              </Link>
+                <Link to="/walklog" className="tile-walk">
+                    + walk
+                </Link>
             </div>
-          </div>
-          <div className="tile-cell">
             <div className="tile-train">
-              <Link to="/trainlog">
-                  + train
-              </Link>
+                <Link to="/trainlog" className="tile-train">
+                    + train
+                </Link>
             </div>
-          </div>
-          <div className="tile-cell">
             <div className="tile-bus">
-              <Link to="/buslog">
-                  + bus
-              </Link>
+                <Link to="/buslog" className="tile-bus">
+                    + bus
+                </Link>
             </div>
-          </div>
-          <div className="tile-cell">
             <div className="tile-bike">
-              <Link to="/bikelog">
-                  + bike
-              </Link>
+                <Link to="/bikelog" className="tile-bike">
+                    + bike
+                </Link>
             </div>
           </div>
+
+        <br/>
+          <div className="bottom">
+              <div>
+              </div>
+              <div>
+                <h2>Why track your transport carbon footprint?</h2>
+                  <p>According to the United States Environmental Protection Agency, the average vehicle emmits 4.67 metric tons of CO2 emissions every year.</p>
+              <div className="bottom-left">
+                <p>
+                In other words, one passenger vehicle driven for one year (11,446 miles at 22mpg) is equivalent to: </p>
+                <p>CO2 emissions from</p>
+                  <ul>
+                    <li>   - 5,109 pounds of coal burned </li>
+                    <br/>
+                    <li>   - .062 tanker trucks worth of gasoline</li>
+                    <br/>
+                    <li>   - 10.8 barrels of oil consumed</li>
+                  </ul>
+                <p>Carbon sequestered by:</p>
+                  <ul>
+                    <li>   - 12 tree seedlings grown for 10 years</li>
+                    <br/>
+                    <li>   - 5.5 acres of U.S. forests in one year</li>
+                  </ul>
+              </div>
+            </div>
+          <div>
         </div>
+      </div>
+      <br />
+      <br />
       </div>
     );
   }

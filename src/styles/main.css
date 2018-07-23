@@ -131,6 +131,30 @@
 
 /* ------------------------------------------- */
 /* UserPage */
+    .top {
+        display: grid;
+        grid-gap:1em;
+        grid-template-columns: 12% 76% 12%;
+        grid-auto-rows: minmax(100px, auto);
+        text-align: center;
+    }
+    .bottom {
+        display: grid;
+        grid-gap:1em;
+        grid-template-columns: 12% 76% 12%;
+        grid-auto-rows: minmax(100px, auto);
+        text-align: center;
+    }
+
+    .bottom {
+        display: grid;
+        grid-gap:1em;
+        grid-template-columns: 12% 76% 12%;
+        grid-auto-rows: minmax(100px, auto);
+        text-align: left;
+    }
+   
+
 
     .tile-container {
         
@@ -146,39 +170,73 @@
         display: inline-block;
         text-align: right;
         vertical-align: top;
-        font-size: 16px; 
-      
     }
 
-    .tile-cell :hover {
+    .tile-car :hover {
         text-decoration: underline;
-        color: #111;
+        color: white;
     }
+    .tile-walk :hover {
+        text-decoration: underline;
+        color: white;
+    }
+
+    .tile-train :hover {
+        text-decoration: underline;
+        color: white;
+    }
+
+    .tile-bus :hover {
+        text-decoration: underline;
+        color: white;
+    }
+
+    .tile-bike :hover {
+        text-decoration: underline;
+        color: white;
+    }
+
 
     .tile-car{ 
         background: #98ce00ff;
         width: 100%;
-        padding-bottom: 100%;      
+        padding-bottom: 100%; 
+        text-decoration: none;
+        color: white;
+        font-size: 35px; 
+
     }
     .tile-walk{ 
         background: #78c3fbff;
         width: 100%;
         padding-bottom: 100%;
+        text-decoration: none;
+        color: white;
+        font-size: 35px; 
     }
     .tile-train{ 
         background: #a0ecd0ff;
         width: 100%;
-        padding-bottom: 100%;
+        padding-bottom: 100%;        
+        text-decoration: none;
+        color: white;
+        font-size: 35px; 
     }
     .tile-bus{ 
         background: #ff4e00ff;
         width: 100%;
         padding-bottom: 100%;
+        text-decoration: none;
+        color: white;
+        font-size: 35px; 
     }
     .tile-bike{ 
         background: #f5bb00ff;
         width: 100%;
         padding-bottom: 100%;
+        text-decoration: none;
+        color: white;
+        font-size: 35px; 
     }
 
 
