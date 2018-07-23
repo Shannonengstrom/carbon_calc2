@@ -42,7 +42,7 @@ class Nav extends Component {
                 </Link>
               </li>
               <li>
-                <Link to="/dashboard">
+                <Link to="/allresults">
                   Dashboard
                 </Link>
               </li>

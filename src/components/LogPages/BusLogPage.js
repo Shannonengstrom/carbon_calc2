@@ -14,7 +14,7 @@ class BusLogPage extends Component {
     this.state = {
       defaults: {
         mode: 'bus',
-        co2_emis: 81
+        co2_emis: 2.2
       }
     }
   }

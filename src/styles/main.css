@@ -158,13 +158,10 @@
 
 
     .tile-container {
-        
         display: grid;
         grid-gap:.1em;
-        /* grid-template-rows: 3fr 3fr 3fr; */
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         grid-auto-rows: minmax(100px, auto);
-
     }
 
     .tile-cell{ 
@@ -281,10 +278,15 @@
         color: white;
     }
 
-    /* 
-    table {
+    
+    .table {
+        display: grid;
+        grid-gap:.1em;
+        /* grid-template-rows: 3fr 3fr 3fr; */
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-auto-rows: minmax(100px, auto);
 
-    } */
+    }
 
     table th, td {
         padding: 15px;

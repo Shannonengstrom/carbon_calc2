@@ -14,7 +14,7 @@ class TrainLogPage extends Component {
     this.state = {
       defaults: {
         mode: 'train',
-        co2_emis: 138
+        co2_emis: .04041
       }
     }
   }

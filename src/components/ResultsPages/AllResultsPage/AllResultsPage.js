@@ -40,11 +40,8 @@ class AllResultsPage extends Component {
                 </div>
                 {/* <pre>{JSON.stringify(this.props.reduxStore.logs.logListReducer)}</pre> */}
                 {/* <pre>{JSON.stringify(this.props.reduxStore.logs.totalReducer)}</pre> */}
-                <pre>{JSON.stringify(this.props.user.id)}</pre>
-
-
-
-                <h3>your results : all</h3>
+                {/* <pre>{JSON.stringify(this.props.user.id)}</pre> */}
+                <h2>your dashboard</h2>
                 <table>
                     <thead>
                         <th>date</th>
@@ -81,8 +78,6 @@ class AllResultsPage extends Component {
                 <br /> 
                 <br />
             </div>
-
-
         )
     }
 }
