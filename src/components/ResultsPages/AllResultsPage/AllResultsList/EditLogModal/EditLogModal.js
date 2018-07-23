@@ -135,7 +135,7 @@ class EditLogModal extends Component {
                 {console.log('state on load',this.state)}
                 {/* <pre>{JSON.stringify(this.state)}</pre> */}
                 {/* <pre>{JSON.stringify(this.props.reduxStore.logs.updateReducer)}</pre> */}
-                <pre>{JSON.stringify(this.props.id)}</pre>
+                {/* <pre>{JSON.stringify(this.props.id)}</pre> */}
                 {/* <Typography gutterBottom>Click to get the full Modal experience!</Typography> */}
                 <p onClick = {() => this.handleOpen(this.props.id)}>edit</p>
                 {/* <td onClick={() => {this.handlePut(this.props.reduxState.log.id)}}>edit</td>  */}

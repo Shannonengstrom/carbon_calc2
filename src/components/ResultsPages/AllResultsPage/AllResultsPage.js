@@ -49,7 +49,7 @@ class AllResultsPage extends Component {
                         <th>destination</th>
                         <th># of miles</th>
                         <th>notes</th> 
-                        <th>CO2 emissions</th>
+                        <th>CO<sub>2</sub> emissions</th>
                         <th></th>
                         <th></th>
                     </thead>
@@ -59,7 +59,7 @@ class AllResultsPage extends Component {
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>total</td>
+                            <td>total CO<sub>2</sub> emissions per metric ton:</td>
                             <td> 
                                 {/* <AllResultsTotal /> */}
                                 {this.props.reduxStore.logs.totalReducer.map( total => {
