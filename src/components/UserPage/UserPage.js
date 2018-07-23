@@ -31,6 +31,7 @@ class UserPage extends Component {
             <div>
               <h1>Welcome!</h1>
               <p>CarbonCalc motivates you to use non-motorized transportation by helping you track your daily trips and your overall transport carbon footprint. </p>
+              <h3>Start tracking today by selecting one of the transportation modes below.  </h3>
             </div>
             <div>
             </div>
