@@ -21,22 +21,13 @@ class Nav extends Component {
     if (this.props.user.userName) {
       content = (
         <div className="nav-right">
-          <ul>
-            <li>
-              <h1
-                id="welcome"
-              >
-                Welcome, { this.props.user.userName }!
-              </h1>
-            </li>
-            <li>
-              <button
-                onClick={this.logout}
-              >
-                Log Out
-              </button>
-            </li>
-          </ul>
+          <h1 id="welcome">
+            Welcome, { this.props.user.userName }!
+          </h1>
+          <button
+            onClick={this.logout}>
+            Log Out
+          </button>
         </div>
       );
     }
