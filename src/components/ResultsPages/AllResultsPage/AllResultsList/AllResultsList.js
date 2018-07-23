@@ -10,6 +10,7 @@ class AllResultsList extends Component {
     
     handleDelete = (id) => {
         this.props.dispatch({type: 'DELETE_LOG', payload: id});
+        window.location.reload();
     }
 
     render() {
