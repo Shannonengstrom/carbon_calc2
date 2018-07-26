@@ -22,10 +22,8 @@ class BikeLogPage extends Component {
 
   sendMultToRedux = () => {
     const body = this.state.defaults;
-    console.log(body);
     const action = {type: 'ADD_DEFAULTS', payload: body};
     this.props.dispatch(action);
-    console.log(action);
   }
 
   componentDidMount () {
@@ -37,7 +35,6 @@ class BikeLogPage extends Component {
       <div className="bikeLogPage">
         <Nav />
         <h2>new log : bike</h2>
-        {/* <pre>{JSON.stringify(this.state)}</pre> */}
         <LogForm co2={this.state}/>
       </div>
     );

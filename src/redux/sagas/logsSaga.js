@@ -3,7 +3,6 @@ import { takeLatest, takeEvery, call, put } from 'redux-saga/effects';
 
 function* getLogs(action) {
     try { 
-        console.log('log in get logs', action);
         const logsResponse = yield call(axios.get, '/api/logs');
         yield put( {type: 'SET_LOGS', 
                     payload: logsResponse.data})
@@ -15,8 +14,6 @@ function* getLogs(action) {
 function* postLog(action) {
     try {
         yield call(axios.post, '/api/logs', action.payload);
-        console.log(action.payload);
-        // yield put( {type: 'GET_LOGS'} );
     } catch (error) {
         console.log('bad things happened', error);
     }
@@ -24,7 +21,6 @@ function* postLog(action) {
 
 function* getEmisTotal() {
     try { 
-        console.log('log in get log total emis');
         const totalResponse = yield call(axios.get, '/api/logs/total');
         yield put( {type: 'SET_TOTAL', 
                     payload: totalResponse.data})
@@ -40,7 +36,6 @@ function* deleteLog(action) {
     } catch ( error ) {
       console.log('something went wrong', error);
     }
-  console.log(action);
   }
 
 function* updateLog(action) {
@@ -49,12 +44,10 @@ function* updateLog(action) {
     } catch ( error ) {
       console.log('something went wrong', error);
     }
-  console.log(action);
   }
 
   function* getLogById(action) {
     try { 
-        console.log('log in get log by id', action.payload);
         const logResponse = yield call(axios.get, `/api/logs/update/${action.payload}`);
         yield put( {type: 'SET_LOG_BY_ID', 
                     payload: logResponse.data})
@@ -62,8 +55,6 @@ function* updateLog(action) {
         console.log('bad things happened', error); 
     }
 }
-
-  
 
 function* logsSaga() {
     yield takeLatest('GET_LOGS', getLogs);

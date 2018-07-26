@@ -61,8 +61,6 @@ class EditLogModal extends Component {
 
     passId = () => {
         const id = this.state.modifiedInput.id;
-        console.log('in passId', id);
-        
         // this.props.dispatch({type: 'GET_LOG_BY_ID', payload: id});
     }
 
@@ -77,7 +75,6 @@ class EditLogModal extends Component {
     
       handleOnChange = (propName) => {
         return event => {
-            console.log('event happened')
             this.setState({
                 modifiedInput:{
                     ...this.state.modifiedInput,    
@@ -85,43 +82,27 @@ class EditLogModal extends Component {
                     }
                 })
             };
-            console.log('the new state', this.state.modifiedInput);  
         }
     updateInputs = () => {
-        // event.preventDefault();
         const body = this.state.modifiedInput;
-        console.log(body);
         const action = {type: 'UPDATE_INPUTS', payload: body};
         this.props.dispatch(action);
-        console.log(action);
         this.calcEmis();
         }
 
     calcEmis () {
         const multiplier = this.state.modifiedInput.co2_emis;
-        console.log('this is the multiplier:', multiplier);
         const miles = this.state.modifiedInput.miles
-        console.log('this is the number of miles:', miles);
         const newCalc = ( multiplier * miles); 
-        console.log('this is the final emission value:', newCalc);
         this.state.modifiedInput.total_emis = newCalc;
-        // const body = this.state.newEmis;
-        // console.log('this is the body:', body);
-        // const action = {type: 'UPDATE_EMIS', payload: body};
-        // this.props.dispatch(action);
-        // console.log(action);
-        // await new Promise(resolve => {setTimeout(resolve, 100)})
         this.updateLog();
         this.handleClose();
         window.location.reload();
-
-        // function thate reroutes to page on click
     };
         
 
   updateLog = () => {
     const body = this.state.modifiedInput;
-    console.log('in updateLog - this is the store:', body);
     this.props.dispatch({type: 'UPDATE_LOG', payload: body});
     this.props.dispatch({type: 'GET_TOTAL'});
 
@@ -132,14 +113,7 @@ class EditLogModal extends Component {
         return (
             
             <div>
-                {console.log('state on load',this.state)}
-                {/* <pre>{JSON.stringify(this.state)}</pre> */}
-                {/* <pre>{JSON.stringify(this.props.reduxStore.logs.updateReducer)}</pre> */}
-                {/* <pre>{JSON.stringify(this.props.id)}</pre> */}
-                {/* <Typography gutterBottom>Click to get the full Modal experience!</Typography> */}
                 <p onClick = {() => this.handleOpen(this.props.id)}>edit</p>
-                {/* <td onClick={() => {this.handlePut(this.props.reduxState.log.id)}}>edit</td>  */}
-                {/* <td onClick={this.handleOpen}>edit</td> */}
                 <Modal
                     aria-labelledby="simple-modal-title"
                     aria-describedby="simple-modal-description"

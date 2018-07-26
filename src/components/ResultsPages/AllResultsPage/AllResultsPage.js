@@ -15,7 +15,6 @@ class AllResultsPage extends Component {
     
 
     componentDidMount = () => {
-        // use component did mount to dispatch an action to request the AllResultsList from the API
         this.props.dispatch({type: USER_ACTIONS.FETCH_USER});
         this.getLogs(); 
         this.props.dispatch({type: 'GET_TOTAL'});
@@ -38,9 +37,6 @@ class AllResultsPage extends Component {
                 <div>
                     <Nav />
                 </div>
-                {/* <pre>{JSON.stringify(this.props.reduxStore.logs.logListReducer)}</pre> */}
-                {/* <pre>{JSON.stringify(this.props.reduxStore.logs.totalReducer)}</pre> */}
-                {/* <pre>{JSON.stringify(this.props.user.id)}</pre> */}
                 <h2>your dashboard</h2>
                 <table>
                     <thead>

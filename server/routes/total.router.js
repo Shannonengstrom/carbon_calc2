@@ -4,7 +4,6 @@ const router = express.Router();
 
 // all results page total - GET
 router.get('/', (req, res) => {
-    console.log('in router.get');
     const queryText = `SELECT SUM(total_emis)
     FROM logs`;
     pool.query(queryText).then((result) => {

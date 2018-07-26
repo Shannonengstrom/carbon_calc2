@@ -25,7 +25,6 @@ class LogForm extends Component {
 
     handleOnChange = (propName) => {
         return event => {
-            console.log('event happened')
             this.setState({
                 newInput:{
                     ...this.state.newInput,    
@@ -38,26 +37,19 @@ class LogForm extends Component {
     addNewInput = (event) => {
         event.preventDefault();
         const body = this.state.newInput;
-        console.log(body);
         const action = {type: 'ADD_INPUTS', payload: body};
         this.props.dispatch(action);
-        console.log(action);
         this.calcEmis();
         }
 
     async calcEmis () {
         const multiplier = this.props.reduxStore.logs.logListReducer.co2_emis;
-        console.log('this is the multiplier:', multiplier);
         const miles = this.state.newInput.miles
-        console.log('this is the number of miles:', miles);
         const newCalc = ( multiplier * miles); 
-        console.log('this is the final emission value:', newCalc);
         this.state.newEmis = newCalc;
         const body = this.state.newEmis;
-        console.log('this is the body:', body);
         const action = {type: 'ADD_EMIS', payload: body};
         this.props.dispatch(action);
-        console.log(action);
         await new Promise(resolve => {setTimeout(resolve, 100)})
         this.postLog(); 
     };
@@ -68,7 +60,6 @@ class LogForm extends Component {
 
   postLog = () => {
     const body = this.props.reduxStore.logs.logListReducer;
-    console.log('in postLog - this is the store:', body);
     this.props.dispatch({type: 'POST_LOG', payload: body})
     this.clearInputs();    
 }
@@ -90,7 +81,6 @@ clearInputs() {
     render() {
         return (
             <div>
-            {/* <pre>{JSON.stringify(this.state)}</pre> */}
                 <form onSubmit={this.addNewInput}>    
                     <label>destination
                     <input 
