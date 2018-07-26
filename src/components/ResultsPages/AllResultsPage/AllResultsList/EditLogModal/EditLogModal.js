@@ -61,7 +61,6 @@ class EditLogModal extends Component {
 
     passId = () => {
         const id = this.state.modifiedInput.id;
-        // this.props.dispatch({type: 'GET_LOG_BY_ID', payload: id});
     }
 
     handleOpen = () => {
@@ -72,7 +71,6 @@ class EditLogModal extends Component {
         this.setState({ open: false });
       };
 
-    
       handleOnChange = (propName) => {
         return event => {
             this.setState({
@@ -83,6 +81,7 @@ class EditLogModal extends Component {
                 })
             };
         }
+
     updateInputs = () => {
         const body = this.state.modifiedInput;
         const action = {type: 'UPDATE_INPUTS', payload: body};
@@ -101,12 +100,11 @@ class EditLogModal extends Component {
     };
         
 
-  updateLog = () => {
-    const body = this.state.modifiedInput;
-    this.props.dispatch({type: 'UPDATE_LOG', payload: body});
-    this.props.dispatch({type: 'GET_TOTAL'});
-
-  }
+    updateLog = () => {
+        const body = this.state.modifiedInput;
+        this.props.dispatch({type: 'UPDATE_LOG', payload: body});
+        this.props.dispatch({type: 'GET_TOTAL'});
+    }
 
     render() {
         const { classes } = this.props;

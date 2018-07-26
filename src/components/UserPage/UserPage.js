@@ -68,14 +68,13 @@ class UserPage extends Component {
 
         <br/>
           <div className="bottom">
-              <div>
+            <div>
               </div>
-              <div>
-                <h2>Why track your transportation carbon footprint?</h2>
-                  <p>According to the United States Environmental Protection Agency, the average vehicle emmits 4.67 metric tons of CO<sub>2</sub> emissions every year.</p>
-              <div className="bottom-left">
-                <p>
-                In other words, one passenger vehicle driven for one year (11,446 miles at 22mpg) is equivalent to: </p>
+                <div>
+                  <h2>Why track your transportation carbon footprint?</h2>
+                    <p>According to the United States Environmental Protection Agency, the average vehicle emmits 4.67 metric tons of CO<sub>2</sub> emissions every year.</p>
+                <div className="bottom-left">
+                <p>In other words, one passenger vehicle driven for one year (11,446 miles at 22mpg) is equivalent to: </p>
                 <p>CO<sub>2</sub> emissions from:</p>
                   <ul>
                     <li>   - 5,109 pounds of coal burned </li>

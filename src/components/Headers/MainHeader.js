@@ -8,11 +8,6 @@ const MainHeader = ({ title }) => (
       </div>
     </div>
   </div>
-
-  
-    
- 
- 
 );
 
 export default MainHeader;

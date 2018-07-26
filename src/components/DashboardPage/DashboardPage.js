@@ -5,7 +5,6 @@ import DashboardLinks from './DashboardLinks/DashboardLinks';
 // import DashboardChart from './DashboardChart/DashboardChart';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 
-
 const mapStateToProps = state => ({
   user: state.user,
 });

@@ -25,7 +25,6 @@ router.post('/', (req, res) => {
     });
 });
 
-
 router.get('/', (req, res) => {
     const id = req.user.id;
     const queryText = `SELECT * FROM logs WHERE person_id=$1 
@@ -89,5 +88,5 @@ router.get('/', (req, res) => {
     });
   });
   
-
+  
 module.exports = router;

@@ -4,8 +4,6 @@ import AllResultsList from './AllResultsList/AllResultsList'
 import Nav from '../../../components/Nav/Nav';
 import { USER_ACTIONS } from '../../../redux/actions/userActions';
 
-
-
 const mapStoreToProps = reduxStore => ({
     reduxStore,
     user: reduxStore.user,
@@ -13,7 +11,6 @@ const mapStoreToProps = reduxStore => ({
 
 class AllResultsPage extends Component {
     
-
     componentDidMount = () => {
         this.props.dispatch({type: USER_ACTIONS.FETCH_USER});
         this.getLogs(); 

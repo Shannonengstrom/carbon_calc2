@@ -24,16 +24,8 @@ import TrainLogPage from './components/LogPages/TrainLogPage';
 import WalkLogPage from './components/LogPages/WalkLogPage';
 import CarLogPage from './components/LogPages/CarLogPage';
 
-// results pages
+// results page
 import AllResultsPage from './components/ResultsPages/AllResultsPage/AllResultsPage';
-import DailyResultsPage from './components/ResultsPages/DailyResultsPage/DailyResultsPage';
-import MonthlyResultsPage from './components/ResultsPages/MonthlyResultsPage/MonthlyResultsPage';
-import YearlyResultsPage from './components/ResultsPages/YearlyResultsPage/YearlyResultsPage';
-import ModalResultsPage from './components/ResultsPages/ModalResultsPage/ModalResultsPage';
-
-// error pages
-// import Error404Page from './components/ErrorPages/Error404Page';
-// import Forbidden403Page from './components/ErrorPages/Forbidden403Page';
 
 
 
@@ -90,22 +82,7 @@ const App = () => (
           path="/allresults"
           component={AllResultsPage}
         />
-          <Route
-          path="/dailyresults"
-          component={DailyResultsPage}
-        />
-          <Route
-          path="/monthlyresults"
-          component={MonthlyResultsPage}
-        />
-          <Route
-          path="/yearlyresults"
-          component={YearlyResultsPage}
-        />
-          <Route
-          path="/modalresults"
-          component={ModalResultsPage}
-        />
+         
         {/* OTHERWISE (no path!) */}
         <Route render={() => <h1>404</h1>} />
       </Switch>

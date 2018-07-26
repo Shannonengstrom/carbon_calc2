@@ -1,11 +1,13 @@
+// Need to implement feature
+
 import React, { Component } from 'react';
 import {Bar, Line, Pie} from 'chart.js';
 
-// const myBarChart = new Chart(ctx, {
-//     type: 'horizontalBar',
-//     data: data,
-//     options: options
-// });
+const myBarChart = new Chart(ctx, {
+    type: 'horizontalBar',
+    data: data,
+    options: options
+});
 
 class DashboardChart extends Component {
 
