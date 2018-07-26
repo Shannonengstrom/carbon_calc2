@@ -1,9 +1,18 @@
-# Express/Passport with React
-This version uses React to control the login requests and redirection in coordination with client-side routing.
+# CarbonCalc
 
-We **STONGLY** recommend following these instructions carefully. It's a lot, and will take some time to set up, but your life will be much easier this way in the long run.
+This web app is a personal transportation carbon footprint calculator created by Shannon Engstrom during her time at Prime Digital Academy. The purpose of the web app is to help motivate users to reduce their carbon emissions. The user will log their daily trips and use the app's carbon emission calculator and dashboard to review their individual and total emission output. Upon reviewing their data, the user can determine where they can cut back on motorized vehicle trips.
 
-## Prerequisites
+## Stack
+
+- React JS
+- React Redux
+- React Saga
+- Node.js
+- Express
+- PostgreSQL
+- Passport
+
+## Prerequisites 
 
 Before you get started, make sure you have the following software installed on your computer:
 
@@ -11,76 +20,45 @@ Before you get started, make sure you have the following software installed on y
 - [PostrgeSQL](https://www.postgresql.org/)
 - [Nodemon](https://nodemon.io/)
 
-## Create database and table
+## Setup Instructions
 
-Create a new database called `prime_app` and create a `person` table:
-
-```SQL
-CREATE TABLE person (
-    id SERIAL PRIMARY KEY,
-    username VARCHAR (80) UNIQUE NOT NULL,
-    password VARCHAR (1000) NOT NULL
-);
-```
-
-If you would like to name your database something else, you will need to change `prime_app` to the name of your new database name in `server/modules/pool.js`
-
-## Download (Don't Clone) This Repository
-
-* Don't Fork or Clone. Instead, click the `Clone or Download` button and select `Download Zip`.
-* Unzip the project and start with the code in that folder.
-* Create a new GitHub project and push this code to the new repository.
-
-## Development Setup Instructions
-
+* For repo & download
 * Run `npm install`
-* Create a `.env` file at the root of the project and paste this line into the file:
-    ```
-    SERVER_SESSION_SECRET=superDuperSecret
-    ```
-    While you're in your new `.env` file, take the time to replace `superDuperSecret` with some long random string like `25POUbVtx6RKVNWszd9ERB9Bb6` to keep your application secure. Here's a site that can help you: [https://passwordsgenerator.net/](https://passwordsgenerator.net/). If you don't do this step, create a secret with less than eight characters, or leave it as `superDuperSecret`, you will get a warning.
 * Start postgres if not running already by using `brew services start postgresql`
+* Create required database tables as described in database.sql file
 * Run `npm run server`
 * Run `npm run client`
 * Navigate to `localhost:3000`
 
-## Debugging
+## Linting Note
 
-To debug, you will need to run the client-side separately from the server. Start the client by running the command `npm run dev:client`. Start the debugging server by selecting the Debug button.
-
-![VSCode Toolbar](documentation/images/vscode-toolbar.png)
-
-Then make sure `Launch Program` is selected from the dropdown, then click the green play arrow.
-
-![VSCode Debug Bar](documentation/images/vscode-debug-bar.png)
-
-## Linting
-
-The Airbnb ESLint for react is a part of this project. If you would like to take advantage of this in VS Code, you can add the `ESLint` extension. Click the `Extensions` button (the button right below the `Debug`) and search for `ESLint`. Click `install` for the first result and then click `Reload`. Then it should be all set up!
-
-![VSCode Toolbar](documentation/images/vscode-toolbar.png)
-
-## Production Build
-
-Before pushing to Heroku, run `npm run build` in terminal. This will create a build folder that contains the code Heroku will be pointed at. You can test this build by typing `npm start`. Keep in mind that `npm start` will let you preview the production build but will **not** auto update.
-
-* Start postgres if not running already by using `brew services start postgresql`
-* Run `npm start`
-* Navigate to `localhost:5000`
+The Airbnb ESLint for react is a part of this project. If you would like to take advantage of this in VS Code, add the `ESLint` extension. 
 
 ## Lay of the Land
 
 * `src/` contains the React application
 * `public/` contains static assets for the client-side
-* `build/` after you build the project, contains the transpiled code from `src/` and `public/` that will be viewed on the production site
 * `server/` contains the Express App
 
-## Deployment
 
-1. Create a new Heroku project
-1. Link the Heroku project to the project GitHub Repo
-1. Create an Herkoku Postgres database
-1. Connect to the Heroku Postgres database from Postico
-1. Create the necessary tables
-1. Add an environment variable for `SERVER_SESSION_SECRET` with a nice random string for security
-1. In the deploy section, select manual deploy
+## Challenges
+
+* **Database structure:**
+Midway through the the initial build I realized my database structure could be improved. For example, if I want to add a feature that allows the user to create a new mode of their choosing, I would need a seperate modes table in my database. I plan to modify my structure and rewrite queries to solve this problem. 
+
+* **Landing page UX and log form:**
+I would like to rethink the landing page UI so that users are directed to one log form view instead of seperate views for each mode. 
+
+* **Time constraints:** 
+Significant health issues kept me from beginning the project on time. I am excited to continue to work on the project in my spare time. 
+
+## Future Plans
+
+Future goals for the project include: 
+
+* Completing results dashboard: integrating ChartJS, apply styling and sorting to main table, and provide more detailed result information such as carbon emissions saved by taking nonmotorized transportation. 
+* Rethink UI and log form user flow.
+* Conduct user testing to determine ways to improve current features and to help prioritize future features. 
+* Additional styling: modify CSS grid on landing page, add animation throughout, add Material UI input and button styling, etc. 
+* Rework database to prepare app to be more scalable. 
+* Convert to React Native to make it viable to incorporate iOS location services. 
