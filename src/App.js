@@ -15,7 +15,6 @@ import MainHeader from './components/Headers/MainHeader';
 import LoginPage from './components/LoginPage/LoginPage';
 import RegisterPage from './components/RegisterPage/RegisterPage';
 import UserPage from './components/UserPage/UserPage';
-import DashboardPage from './components/DashboardPage/DashboardPage';
 
 // log pages
 import BikeLogPage from './components/LogPages/BikeLogPage';
@@ -49,10 +48,6 @@ const App = () => (
         <Route
           path="/user"
           component={UserPage}
-        />
-        <Route
-          path="/dashboard"
-          component={DashboardPage}
         />
         <Route
           path="/bikelog"
